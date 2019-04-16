@@ -32,8 +32,8 @@ import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.BaseEnhancedRandomExtensions;
 import de.alpharogroup.evaluate.object.Person;
-import io.github.benas.randombeans.EnhancedRandomBuilder;
 
 /**
  * The unit test class for the class {@link ToStringEvaluator}.
@@ -84,7 +84,7 @@ public class ToStringEvaluatorTest
 			@Override
 			public String toString()
 			{
-				return new EnhancedRandomBuilder().build().nextObject(String.class);
+				return BaseEnhancedRandomExtensions.nextObject(String.class);
 			}
 		});
 		expected = false;

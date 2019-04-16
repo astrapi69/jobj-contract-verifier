@@ -29,8 +29,8 @@ import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.BaseEnhancedRandomExtensions;
 import de.alpharogroup.evaluate.object.Person;
-import io.github.benas.randombeans.EnhancedRandomBuilder;
 
 /**
  * The unit test class for the class {@link EqualsHashCodeAndToStringEvaluator}.
@@ -217,21 +217,21 @@ public class EqualsHashCodeAndToStringEvaluatorTest
 		boolean actual;
 
 		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(null,
-			new EnhancedRandomBuilder().build()::nextObject);
+			BaseEnhancedRandomExtensions::nextObject);
 		expected = false;
 		assertEquals(expected, actual);
 
 		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(Person.class,
-			new EnhancedRandomBuilder().build()::nextObject);
+			BaseEnhancedRandomExtensions::nextObject);
 		expected = true;
 		assertEquals(expected, actual);
 
 		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(Integer.class,
-			new EnhancedRandomBuilder().build()::nextObject);
+			BaseEnhancedRandomExtensions::nextObject);
 		assertEquals(expected, actual);
 
 		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(String.class,
-			new EnhancedRandomBuilder().build()::nextObject);
+			BaseEnhancedRandomExtensions::nextObject);
 		assertEquals(expected, actual);
 	}
 

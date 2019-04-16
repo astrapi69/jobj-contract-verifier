@@ -35,10 +35,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.BaseEnhancedRandomExtensions;
 import de.alpharogroup.evaluate.object.Person;
 import de.alpharogroup.evaluate.object.api.ContractViolation;
 import de.alpharogroup.evaluate.object.enums.ToStringContractViolation;
-import io.github.benas.randombeans.EnhancedRandomBuilder;
 
 /**
  * The unit test class for the class {@link ToStringCheck}
@@ -89,7 +89,7 @@ public class ToStringCheckTest
 			@Override
 			public String toString()
 			{
-				return new EnhancedRandomBuilder().build().nextObject(String.class);
+				return BaseEnhancedRandomExtensions.nextObject(String.class);
 			}
 		});
 		expected = Optional.of(ToStringContractViolation.CONSISTENCY);

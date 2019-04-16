@@ -20,7 +20,6 @@
  */
 package de.alpharogroup.evaluate.object;
 
-import io.github.benas.randombeans.EnhancedRandomBuilder;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -42,19 +41,19 @@ public class WeirdBadInconsistencyClass
 	@Override
 	public boolean equals(Object o)
 	{
-		boolean randomBoolean = new EnhancedRandomBuilder().build().nextObject(boolean.class);
+		boolean randomBoolean = BaseEnhancedRandomExtensions.nextObject(boolean.class);
 		return randomBoolean;
 	}
 
 	@Override
 	public int hashCode()
 	{
-		return new EnhancedRandomBuilder().build().nextObject(Integer.class);
+		return BaseEnhancedRandomExtensions.nextObject(Integer.class);
 	}
 
 	@Override
 	public String toString()
 	{
-		return new EnhancedRandomBuilder().build().nextObject(String.class);
+		return BaseEnhancedRandomExtensions.nextObject(String.class);
 	}
 }

@@ -34,11 +34,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.BaseEnhancedRandomExtensions;
 import de.alpharogroup.evaluate.object.Person;
 import de.alpharogroup.evaluate.object.WeirdBadInconsistencyClass;
 import de.alpharogroup.evaluate.object.api.ContractViolation;
 import de.alpharogroup.evaluate.object.enums.EqualsContractViolation;
-import io.github.benas.randombeans.EnhancedRandomBuilder;
 
 /**
  * The unit test class for the class {@link EqualsCheck}
@@ -101,13 +101,13 @@ public class EqualsCheckTest
 			@Override
 			public boolean equals(Object o)
 			{
-				return new EnhancedRandomBuilder().build().nextObject(boolean.class);
+				return BaseEnhancedRandomExtensions.nextObject(boolean.class);
 			}
 
 			@Override
 			public int hashCode()
 			{
-				return new EnhancedRandomBuilder().build().nextObject(Integer.class);
+				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
 			}
 		}, Person.builder().build());
 		expected = Optional.of(EqualsContractViolation.CONSISTENCY);

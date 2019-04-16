@@ -31,10 +31,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.BaseEnhancedRandomExtensions;
 import de.alpharogroup.evaluate.object.Person;
 import de.alpharogroup.evaluate.object.api.ContractViolation;
 import de.alpharogroup.evaluate.object.enums.HashcodeContractViolation;
-import io.github.benas.randombeans.EnhancedRandomBuilder;
 
 /**
  * The unit test class for the class {@link HashcodeCheck}
@@ -94,7 +94,7 @@ public class HashcodeCheckTest
 			@Override
 			public int hashCode()
 			{
-				return new EnhancedRandomBuilder().build().nextObject(Integer.class);
+				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
 			}
 		});
 		expected = Optional.of(HashcodeContractViolation.CONSISTENCY);
@@ -125,7 +125,7 @@ public class HashcodeCheckTest
 			@Override
 			public int hashCode()
 			{
-				return new EnhancedRandomBuilder().build().nextObject(Integer.class);
+				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
 			}
 		}, new Person()
 		{
@@ -133,7 +133,7 @@ public class HashcodeCheckTest
 			@Override
 			public int hashCode()
 			{
-				return new EnhancedRandomBuilder().build().nextObject(Integer.class);
+				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
 			}
 		});
 		expected = Optional.of(HashcodeContractViolation.EQAUALITY);
@@ -168,7 +168,7 @@ public class HashcodeCheckTest
 			@Override
 			public int hashCode()
 			{
-				return new EnhancedRandomBuilder().build().nextObject(Integer.class);
+				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
 			}
 		}, new Person()
 		{
@@ -176,7 +176,7 @@ public class HashcodeCheckTest
 			@Override
 			public int hashCode()
 			{
-				return new EnhancedRandomBuilder().build().nextObject(Integer.class);
+				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
 			}
 		});
 		expected = Optional.of(HashcodeContractViolation.UNEQAUALITY);

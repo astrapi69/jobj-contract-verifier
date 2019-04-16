@@ -28,8 +28,8 @@ import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.BaseEnhancedRandomExtensions;
 import de.alpharogroup.evaluate.object.Person;
-import io.github.benas.randombeans.EnhancedRandomBuilder;
 
 /**
  * The unit test class for the class {@link HashcodeEvaluator}.
@@ -66,7 +66,7 @@ public class HashcodeEvaluatorTest
 			@Override
 			public int hashCode()
 			{
-				return new EnhancedRandomBuilder().build().nextObject(Integer.class);
+				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
 			}
 		});
 		expected = false;
@@ -98,14 +98,14 @@ public class HashcodeEvaluatorTest
 			@Override
 			public int hashCode()
 			{
-				return new EnhancedRandomBuilder().build().nextObject(Integer.class);
+				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
 			}
 		}, new Person()
 		{
 			@Override
 			public int hashCode()
 			{
-				return new EnhancedRandomBuilder().build().nextObject(Integer.class);
+				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
 			}
 		});
 		expected = false;

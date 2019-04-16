@@ -28,8 +28,8 @@ import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.evaluate.object.BaseEnhancedRandomExtensions;
 import de.alpharogroup.evaluate.object.Person;
-import io.github.benas.randombeans.EnhancedRandomBuilder;
 
 /**
  * The unit test class for the class {@link EqualsEvaluator}.
@@ -70,13 +70,13 @@ public class EqualsEvaluatorTest
 			@Override
 			public boolean equals(Object o)
 			{
-				return new EnhancedRandomBuilder().build().nextObject(boolean.class);
+				return BaseEnhancedRandomExtensions.nextObject(boolean.class);
 			}
 
 			@Override
 			public int hashCode()
 			{
-				return new EnhancedRandomBuilder().build().nextObject(Integer.class);
+				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
 			}
 		}, Person.builder().build());
 		expected = false;
