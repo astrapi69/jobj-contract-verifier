@@ -11,12 +11,11 @@
 	</parent>
 
 	<artifactId>jobj-contract-verifier</artifactId>
-	<version>3-SNAPSHOT</version>
+	<version>3</version>
 
 	<properties>
-		<!-- JOBJECT-EXTENSIONS versions -->
-		<jobject-extensions.version>2.6.4</jobject-extensions.version>		
-		<jobject-clone.version>${jobject-extensions.version}</jobject-clone.version>
+		<!-- JOBJECT-CLONE versions -->		
+		<jobject-clone.version>2.6.4</jobject-clone.version>
 		<!-- TEST-OBJECTS version -->
 		<test-objects.version>5.0.1</test-objects.version>
 		<!-- EXTERNAL LIBRARIES versions -->

@@ -54,14 +54,14 @@ Than you can add the dependency to your dependencies:
 
 	<properties>
 			...
-		<!-- JOBJ-COMPARE version -->
-		<jobj-contract-verifier.version>3.1</jobj-contract-verifier.version>
+		<!-- JOBJ-CONTRACT-VERIFIER version -->
+		<jobj-contract-verifier.version>3</jobj-contract-verifier.version>
 			...
 	</properties>
 			...
 		<dependencies>
 			...
-			<!-- JOBJ-COMPARE DEPENDENCY -->
+			<!-- JOBJ-CONTRACT-VERIFIER DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jobj-contract-verifier</artifactId>
