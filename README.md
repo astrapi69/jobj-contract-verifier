@@ -95,6 +95,10 @@ Don't forget to add new units tests on your changes.
 Do not hesitate to contact the jobj-contract-verifier developers with your questions, concerns, comments, bug reports, or feature requests.
 - Feature requests, questions and bug reports can be reported at the [issues page](https://github.com/astrapi69/jobj-contract-verifier/issues).
 
+# Similar projects
+
+- [equalsverifier](https://github.com/jqno/equalsverifier) EqualsVerifier can be used in Java unit tests to verify whether the contract for the equals and hashCode methods is met.
+
 ## Credits
 
 |**Travis CI**|
