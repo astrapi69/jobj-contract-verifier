@@ -2,8 +2,8 @@
 
 <div align="center">
 
-[![Build Status](https://travis-ci.org/astrapi69/jobj-contract-verifier.svg?branch=develop)](https://travis-ci.org/astrapi69/jobj-contract-verifier) 
-[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-contract-verifier/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jobj-contract-verifier?branch=develop) 
+[![Build Status](https://travis-ci.org/astrapi69/jobj-contract-verifier.svg?branch=master)](https://travis-ci.org/astrapi69/jobj-contract-verifier) 
+[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-contract-verifier/badge.svg?branch=master)](https://coveralls.io/github/astrapi69/jobj-contract-verifier?branch=master) 
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/jobj-contract-verifier.svg?style=flat)](https://github.com/astrapi69/jobj-contract-verifier/issues) 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-contract-verifier/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-contract-verifier)
 [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jobj-contract-verifier.svg)](http://www.javadoc.io/doc/de.alpharogroup/jobj-contract-verifier)
@@ -111,7 +111,7 @@ Do not hesitate to contact the jobj-contract-verifier developers with your quest
 
 |**coveralls.io**|
 |     :---:      |
-|[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-contract-verifier/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jobj-contract-verifier?branch=master)|
+|[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-contract-verifier/badge.svg?branch=master)](https://coveralls.io/github/astrapi69/jobj-contract-verifier?branch=master)|
 |Special thanks to [coveralls.io](https://coveralls.io) for providing a free code coverage for open source projects|
 |     <img width=1000/>     |
 
