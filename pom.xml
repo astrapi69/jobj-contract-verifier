@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.alpharogroup</groupId>
+		<artifactId>mvn-java-parent</artifactId>
+		<version>4.8</version>
+	</parent>
+
+	<artifactId>jobj-contract-verifier</artifactId>
+	<version>3</version>
+
+	<properties>
+		<!-- JOBJECT-CLONE versions -->		
+		<jobject-clone.version>2.6.4</jobject-clone.version>
+		<!-- TEST-OBJECTS version -->
+		<test-objects.version>5.0.1</test-objects.version>
+		<!-- EXTERNAL LIBRARIES versions -->
+		<commons-beanutils.version>1.9.3</commons-beanutils.version>
+	</properties>
+
+	<dependencyManagement>
+
+		<dependencies>
+			<!-- JOBJECT-CLONE DEPENDENCY -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>jobject-clone</artifactId>
+				<version>${jobject-clone.version}</version>
+			</dependency>
+
+			<!-- COMMONS-BEANUTILS DEPENDENCY -->
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<exclusions>
+					<exclusion>
+						<artifactId>commons-logging</artifactId>
+						<groupId>commons-logging</groupId>
+					</exclusion>
+				</exclusions>
+				<version>${commons-beanutils.version}</version>
+			</dependency>
+			<!-- TEST-OBJECTS DEPENDENCY -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>test-objects</artifactId>
+				<version>${test-objects.version}</version>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>jobject-clone</artifactId>
+		</dependency>
+		<!-- RANDOM-BEANS DEPENDENCY -->
+		<dependency>
+			<groupId>io.github.benas</groupId>
+			<artifactId>random-beans</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>test-objects</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- MEANBEAN DEPENDENCY -->
+		<dependency>
+			<groupId>org.meanbean</groupId>
+			<artifactId>meanbean</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+	
+</project>
