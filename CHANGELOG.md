@@ -1,8 +1,12 @@
 ## Change log
 ----------------------
 
-Version 3.-SNAPSHOT
+Version 3.1-SNAPSHOT
 -------------
+
+CHANGED:
+
+- update of dependency jobject-clone version to 3
 
 Version 3
 -------------
