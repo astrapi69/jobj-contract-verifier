@@ -66,6 +66,7 @@ Than you can add the dependency to your dependencies:
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jobj-contract-verifier</artifactId>
 				<version>${jobj-contract-verifier.version}</version>
+				<scope>test</scope>
 			</dependency>
 			...
 		</dependencies>
