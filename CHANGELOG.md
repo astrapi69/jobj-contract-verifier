@@ -7,6 +7,7 @@ Version 3.1-SNAPSHOT
 CHANGED:
 
 - update of dependency jobject-clone version to 3
+- update of test-objects dependency version to 5.1
 
 Version 3
 -------------
