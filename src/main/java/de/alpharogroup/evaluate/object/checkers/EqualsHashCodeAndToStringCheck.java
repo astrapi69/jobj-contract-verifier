@@ -289,7 +289,16 @@ public final class EqualsHashCodeAndToStringCheck
 			return Optional.of(ToStringContractViolation.CLASS_NULL_ARGUMENT);
 		}
 		final T first = function.apply(cls);
-		final T second = function.apply(cls);
+		T second = null;
+		do
+		{
+			if(second != null) {
+
+			}
+			second = function.apply(cls);
+		}
+		while(second.equals(first));
+
 		final T third = (T)CloneObjectExtensions.cloneObject(first);
 		final T fourth = (T)CloneObjectExtensions.cloneObject(third);
 

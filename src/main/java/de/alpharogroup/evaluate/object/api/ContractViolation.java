@@ -25,4 +25,5 @@ package de.alpharogroup.evaluate.object.api;
  */
 public interface ContractViolation
 {
+	String name();
 }
