@@ -12,7 +12,7 @@
 
 	<artifactId>jobj-contract-verifier</artifactId>
 	<version>3.1-SNAPSHOT</version>
-	
+
 	<name>${project.artifactId}</name>
 
 	<description>Verify if java objects fulfill the contracts of equals, hashcode and toString</description>
@@ -20,12 +20,14 @@
 	<url>https://github.com/astrapi69/${project.artifactId}</url>
 
 	<properties>
-		<!-- JOBJECT-CLONE versions -->		
+		<!-- JOBJECT-CLONE versions -->
 		<jobject-clone.version>3</jobject-clone.version>
 		<!-- TEST-OBJECTS version -->
 		<test-objects.version>5.1</test-objects.version>
 		<!-- EXTERNAL LIBRARIES versions -->
 		<commons-beanutils.version>1.9.3</commons-beanutils.version>
+		<!-- RANDOMIZER-CORE version -->
+		<randomizer-core.version>5.8</randomizer-core.version>
 	</properties>
 
 	<licenses>
@@ -80,6 +82,12 @@
 				<artifactId>test-objects</artifactId>
 				<version>${test-objects.version}</version>
 			</dependency>
+			<!-- RANDOMIZER DEPENDENCY -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>randomizer-core</artifactId>
+				<version>${randomizer-core.version}</version>
+			</dependency>
 
 		</dependencies>
 
@@ -96,7 +104,12 @@
 			<groupId>io.github.benas</groupId>
 			<artifactId>random-beans</artifactId>
 		</dependency>
-		
+		<!-- RANDOMIZER DEPENDENCY -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>randomizer-core</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
@@ -115,5 +128,5 @@
 		</dependency>
 
 	</dependencies>
-	
+
 </project>

@@ -4,6 +4,10 @@
 Version 3.1-SNAPSHOT
 -------------
 
+ADDED:
+ 
+- new class ContractVerifier created that can verify a given class the contracts of the methods equals, hashcode and toString
+
 CHANGED:
 
 - update of dependency jobject-clone version to 3

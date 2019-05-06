@@ -28,9 +28,6 @@ import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.BaseEnhancedRandomExtensions;
-import de.alpharogroup.evaluate.object.Person;
-
 /**
  * The unit test class for the class {@link EqualsEvaluator}.
  */
@@ -65,22 +62,6 @@ public class EqualsEvaluatorTest
 		expected = false;
 		assertEquals(expected, actual);
 
-		actual = EqualsEvaluator.evaluateConsistency(new Person()
-		{
-			@Override
-			public boolean equals(Object o)
-			{
-				return BaseEnhancedRandomExtensions.nextObject(boolean.class);
-			}
-
-			@Override
-			public int hashCode()
-			{
-				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
-			}
-		}, Person.builder().build());
-		expected = false;
-		assertEquals(expected, actual);
 	}
 
 	/**

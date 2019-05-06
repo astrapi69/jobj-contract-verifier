@@ -29,6 +29,7 @@ import de.alpharogroup.clone.object.CloneObjectExtensions;
 import de.alpharogroup.evaluate.object.api.ContractViolation;
 import de.alpharogroup.evaluate.object.enums.EqualsHashcodeContractViolation;
 import de.alpharogroup.evaluate.object.enums.ToStringContractViolation;
+import de.alpharogroup.random.RandomObjectFactory;
 import io.github.benas.randombeans.EnhancedRandomBuilder;
 import lombok.experimental.UtilityClass;
 
@@ -244,10 +245,12 @@ public final class EqualsHashCodeAndToStringCheck
 	 *             Signals that an I/O exception has occurred
 	 * @throws ClassNotFoundException
 	 *             occurs if a given class cannot be located by the specified class loader
+	 * @throws NoSuchFieldException
+	 *             is thrown if no such field exists
 	 */
 	public static <T> Optional<ContractViolation> equalsHashcodeAndToString(Class<T> cls)
 		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
-		InstantiationException, IOException, ClassNotFoundException
+		InstantiationException, IOException, ClassNotFoundException, NoSuchFieldException
 	{
 		Function<Class<T>, T> function = new EnhancedRandomBuilder().build()::nextObject;
 		return equalsHashcodeAndToString(cls, function);
@@ -278,11 +281,14 @@ public final class EqualsHashCodeAndToStringCheck
 	 *             Signals that an I/O exception has occurred
 	 * @throws ClassNotFoundException
 	 *             occurs if a given class cannot be located by the specified class loader
+	 * @throws NoSuchFieldException
+	 *             is thrown if no such field exists
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> Optional<ContractViolation> equalsHashcodeAndToString(Class<T> cls,
-		Function<Class<T>, T> function) throws NoSuchMethodException, IllegalAccessException,
-		InvocationTargetException, InstantiationException, IOException, ClassNotFoundException
+		Function<Class<T>, T> function)
+		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
+		InstantiationException, IOException, ClassNotFoundException, NoSuchFieldException
 	{
 		if (cls == null)
 		{
@@ -292,12 +298,16 @@ public final class EqualsHashCodeAndToStringCheck
 		T second = null;
 		do
 		{
-			if(second != null) {
-
+			if (second == null)
+			{
+				second = function.apply(cls);
 			}
-			second = function.apply(cls);
+			else
+			{
+				second = RandomObjectFactory.newRandomObject(cls);
+			}
 		}
-		while(second.equals(first));
+		while (second.equals(first));
 
 		final T third = (T)CloneObjectExtensions.cloneObject(first);
 		final T fourth = (T)CloneObjectExtensions.cloneObject(third);

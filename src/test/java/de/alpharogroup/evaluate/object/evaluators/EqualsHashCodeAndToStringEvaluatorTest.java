@@ -166,11 +166,13 @@ public class EqualsHashCodeAndToStringEvaluatorTest
 	 *             Signals that an I/O exception has occurred.
 	 * @throws ClassNotFoundException
 	 *             occurs if a given class cannot be located by the specified class loader
+	 * @throws NoSuchFieldException
+	 *             is thrown if no such field exists
 	 */
 	@Test(enabled = true)
 	public void testEvaluateEqualsHashcodeAndToStringClass()
 		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
-		InstantiationException, IOException, ClassNotFoundException
+		InstantiationException, IOException, ClassNotFoundException, NoSuchFieldException
 	{
 		boolean expected;
 		boolean actual;
@@ -207,11 +209,13 @@ public class EqualsHashCodeAndToStringEvaluatorTest
 	 *             Signals that an I/O exception has occurred.
 	 * @throws ClassNotFoundException
 	 *             occurs if a given class cannot be located by the specified class loader
+	 * @throws NoSuchFieldException
+	 *             is thrown if no such field exists
 	 */
 	@Test(enabled = true)
 	public void testEvaluateEqualsHashcodeAndToStringClassAndFuction()
 		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
-		InstantiationException, IOException, ClassNotFoundException
+		InstantiationException, IOException, ClassNotFoundException, NoSuchFieldException
 	{
 		boolean expected;
 		boolean actual;
