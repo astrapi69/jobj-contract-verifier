@@ -1,6 +1,18 @@
 ## Change log
 ----------------------
 
+Version 3.1
+-------------
+
+ADDED:
+ 
+- new class ContractVerifier created that can verify a given class the contracts of the methods equals, hashcode and toString
+
+CHANGED:
+
+- update of dependency jobject-clone version to 3
+- update of test-objects dependency version to 5.1
+
 Version 3
 -------------
 

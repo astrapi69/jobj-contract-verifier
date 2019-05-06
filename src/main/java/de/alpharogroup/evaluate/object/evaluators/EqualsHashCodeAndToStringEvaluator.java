@@ -171,10 +171,12 @@ public final class EqualsHashCodeAndToStringEvaluator
 	 *             Signals that an I/O exception has occurred.
 	 * @throws ClassNotFoundException
 	 *             occurs if a given class cannot be located by the specified class loader
+	 * @throws NoSuchFieldException
+	 *             is thrown if no such field exists
 	 */
 	public static <T> boolean evaluateEqualsHashcodeAndToString(Class<T> cls)
 		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
-		InstantiationException, IOException, ClassNotFoundException
+		InstantiationException, IOException, ClassNotFoundException, NoSuchFieldException
 	{
 		return !EqualsHashCodeAndToStringCheck.equalsHashcodeAndToString(cls).isPresent();
 	}
@@ -203,10 +205,13 @@ public final class EqualsHashCodeAndToStringEvaluator
 	 *             Signals that an I/O exception has occurred.
 	 * @throws ClassNotFoundException
 	 *             occurs if a given class cannot be located by the specified class loader
+	 * @throws NoSuchFieldException
+	 *             is thrown if no such field exists
 	 */
 	public static <T> boolean evaluateEqualsHashcodeAndToString(Class<T> cls,
-		Function<Class<T>, T> function) throws NoSuchMethodException, IllegalAccessException,
-		InvocationTargetException, InstantiationException, IOException, ClassNotFoundException
+		Function<Class<T>, T> function)
+		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
+		InstantiationException, IOException, ClassNotFoundException, NoSuchFieldException
 	{
 		return !EqualsHashCodeAndToStringCheck.equalsHashcodeAndToString(cls, function).isPresent();
 	}

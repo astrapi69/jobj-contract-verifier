@@ -216,11 +216,13 @@ public class EqualsHashCodeAndToStringCheckTest
 	 *             Signals that an I/O exception has occurred
 	 * @throws ClassNotFoundException
 	 *             occurs if a given class cannot be located by the specified class loader
+	 * @throws NoSuchFieldException
+	 *             is thrown if no such field exists
 	 */
 	@Test(enabled = true)
 	public void testEqualsHashcodeAndToStringClass()
 		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
-		InstantiationException, IOException, ClassNotFoundException
+		InstantiationException, IOException, ClassNotFoundException, NoSuchFieldException
 	{
 		actual = EqualsHashCodeAndToStringCheck.equalsHashcodeAndToString(null);
 		expected = Optional.of(ToStringContractViolation.CLASS_NULL_ARGUMENT);

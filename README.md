@@ -31,7 +31,7 @@ or over ether with:
 
 or over flattr:
   
-<a href="http://flattr.com/thing/4067696/astrapi69jgeohash-on-GitHub" target="_blank">
+<a href="http://flattr.com/thing/4067696/astrapi69jobj-contract-verifier-on-GitHub" target="_blank">
 <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
 </a>
 
@@ -55,7 +55,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- JOBJ-CONTRACT-VERIFIER version -->
-		<jobj-contract-verifier.version>3</jobj-contract-verifier.version>
+		<jobj-contract-verifier.version>3.1</jobj-contract-verifier.version>
 			...
 	</properties>
 			...
@@ -66,6 +66,7 @@ Than you can add the dependency to your dependencies:
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jobj-contract-verifier</artifactId>
 				<version>${jobj-contract-verifier.version}</version>
+				<scope>test</scope>
 			</dependency>
 			...
 		</dependencies>
@@ -94,6 +95,10 @@ Don't forget to add new units tests on your changes.
 
 Do not hesitate to contact the jobj-contract-verifier developers with your questions, concerns, comments, bug reports, or feature requests.
 - Feature requests, questions and bug reports can be reported at the [issues page](https://github.com/astrapi69/jobj-contract-verifier/issues).
+
+# Similar projects
+
+- [equalsverifier](https://github.com/jqno/equalsverifier) EqualsVerifier can be used in Java unit tests to verify whether the contract for the equals and hashCode methods is met.
 
 ## Credits
 

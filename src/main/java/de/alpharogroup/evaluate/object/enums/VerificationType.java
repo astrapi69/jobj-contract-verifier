@@ -18,12 +18,12 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.evaluate.object.api;
+package de.alpharogroup.evaluate.object.enums;
 
 /**
- * The interface {@link ContractViolation} is a marker interface
+ * The class {@link VerificationType} holds the data how to verify of an object
  */
-public interface ContractViolation
+public enum VerificationType
 {
-	String name();
+	EQUALS_HASHCODE_AND_TO_STRING;
 }

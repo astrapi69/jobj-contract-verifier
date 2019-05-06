@@ -18,12 +18,26 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.evaluate.object.api;
+package de.alpharogroup.evaluate.object.verifier;
+
+import org.testng.annotations.Test;
+
+import de.alpharogroup.test.objects.Member;
+import de.alpharogroup.test.objects.Person;
 
 /**
- * The interface {@link ContractViolation} is a marker interface
+ * The unit test class for the class {@link ContractVerifier}
  */
-public interface ContractViolation
+public class ContractVerifierTest
 {
-	String name();
+
+	/**
+	 * Test method for {@link ContractVerifier#verify()}
+	 */
+	@Test
+	public void testOfVerify()
+	{
+		ContractVerifier.of(Person.class).verify();
+		ContractVerifier.of(Member.class).verify();
+	}
 }
