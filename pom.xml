@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>jobj-contract-verifier</artifactId>
-	<version>3.2-SNAPSHOT</version>
+	<version>3.1.1</version>
 
 	<name>${project.artifactId}</name>
 
@@ -21,13 +21,13 @@
 
 	<properties>
 		<!-- JOBJECT-CLONE versions -->
-		<jobject-clone.version>3.1</jobject-clone.version>
+		<jobject-clone.version>3.1.2</jobject-clone.version>
 		<!-- TEST-OBJECTS version -->
 		<test-objects.version>5.0.1</test-objects.version>
 		<!-- EXTERNAL LIBRARIES versions -->
 		<commons-beanutils.version>1.9.3</commons-beanutils.version>
 		<!-- RANDOMIZER-CORE version -->
-		<randomizer-core.version>5.8</randomizer-core.version>
+		<randomizer-core.version>5.8.2</randomizer-core.version>
 	</properties>
 
 	<licenses>

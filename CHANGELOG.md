@@ -1,12 +1,13 @@
 ## Change log
 ----------------------
 
-Version 3.2-SNAPSHOT
+Version 3.1.1
 -------------
 
 CHANGED:
 
-- update of dependency jobject-clone version to 3.1
+- update of dependency jobject-clone version to 3.1.2
+- update of dependency randomizer-core version to 5.8.2
 
 Version 3.1
 -------------
