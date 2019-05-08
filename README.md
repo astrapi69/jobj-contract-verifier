@@ -55,7 +55,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- JOBJ-CONTRACT-VERIFIER version -->
-		<jobj-contract-verifier.version>3.1</jobj-contract-verifier.version>
+		<jobj-contract-verifier.version>3.1.1</jobj-contract-verifier.version>
 			...
 	</properties>
 			...
@@ -104,7 +104,7 @@ Do not hesitate to contact the jobj-contract-verifier developers with your quest
 
 |**Travis CI**|
 |     :---:      |
-|[![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)](https://coveralls.io/github/astrapi69/jobj-contract-verifier?branch=master)|
+|[![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)](https://coveralls.io/github/astrapi69/jobj-contract-verifier?branch=develop)|
 |Special thanks to [Travis CI](https://travis-ci.org) for providing a free continuous integration service for open source projects|
 |     <img width=1000/>     |
 
@@ -116,7 +116,11 @@ Do not hesitate to contact the jobj-contract-verifier developers with your quest
 
 |**coveralls.io**|
 |     :---:      |
+<<<<<<< HEAD
 |[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-contract-verifier/badge.svg?branch=master)](https://coveralls.io/github/astrapi69/jobj-contract-verifier?branch=master)|
+=======
+|[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-contract-verifier/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jobj-contract-verifier?branch=develop)|
+>>>>>>> refs/heads/release/3.1.1
 |Special thanks to [coveralls.io](https://coveralls.io) for providing a free code coverage for open source projects|
 |     <img width=1000/>     |
 
