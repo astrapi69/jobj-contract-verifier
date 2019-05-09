@@ -1,6 +1,14 @@
 ## Change log
 ----------------------
 
+Version 3.1.2
+-------------
+
+CHANGED:
+
+- update of dependency randomizer-core version to 5.8.3
+- update of dependency test-objects version to 5.2
+
 Version 3.1.1
 -------------
 
