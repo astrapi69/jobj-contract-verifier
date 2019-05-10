@@ -1,6 +1,14 @@
 ## Change log
 ----------------------
 
+Version 3.2-SNAPSHOT
+-------------
+
+CHANGED:
+
+- update of parent version to 5
+- update of dependency randomizer-core version to 6.0.1
+
 Version 3.1.2
 -------------
 

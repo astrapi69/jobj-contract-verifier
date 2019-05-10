@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Optional;
 import java.util.function.Function;
+import java.util.logging.Level;
 
 import de.alpharogroup.clone.object.CloneObjectExtensions;
 import de.alpharogroup.evaluate.object.api.ContractViolation;
@@ -32,13 +33,17 @@ import de.alpharogroup.evaluate.object.enums.ToStringContractViolation;
 import de.alpharogroup.random.RandomObjectFactory;
 import io.github.benas.randombeans.EnhancedRandomBuilder;
 import lombok.experimental.UtilityClass;
+import lombok.extern.java.Log;
 
 /**
  * The class {@link EqualsHashCodeAndToStringCheck} is a combination of all checks.
  */
 @UtilityClass
+@Log
 public final class EqualsHashCodeAndToStringCheck
 {
+	/** The Constant value for the default max iteration. */
+	public static final int DEFAULT_MAX_ITERATION = 9999;
 
 	/**
 	 * Checks all the contract conditions for the methods {@link Object#equals(Object)} and
@@ -294,26 +299,110 @@ public final class EqualsHashCodeAndToStringCheck
 		{
 			return Optional.of(ToStringContractViolation.CLASS_NULL_ARGUMENT);
 		}
-		final T first = function.apply(cls);
-		T second = null;
-		do
-		{
-			if (second == null)
-			{
-				second = function.apply(cls);
-			}
-			else
-			{
-				second = RandomObjectFactory.newRandomObject(cls);
-			}
-		}
-		while (second.equals(first));
 
+		final T first = getRandomObject(cls, function);
+		final T second = getSecondRandomObject(cls, function, first);
 		final T third = (T)CloneObjectExtensions.cloneObject(first);
 		final T fourth = (T)CloneObjectExtensions.cloneObject(third);
 
 		return EqualsHashCodeAndToStringCheck.equalsHashcodeAndToString(first, second, third,
 			fourth);
+	}
+
+	private static <T> T getSecondRandomObject(Class<T> cls, Function<Class<T>, T> function,
+		T first) throws AssertionError
+	{
+		T second = null;
+		int count = 0;
+		boolean iterate = true;
+		do
+		{
+			second = getRandomObject(cls, function);
+			count++;
+			try {
+				iterate = first.equals(second);
+			} catch(Exception e) {
+				iterate = false;
+				log.log(Level.INFO, e.getMessage(), e);
+			}
+		}
+		while (iterate && count < DEFAULT_MAX_ITERATION);
+		return second;
+	}
+
+	private static <T> T getRandomObject(Class<T> cls, Function<Class<T>, T> function)
+		throws AssertionError
+	{
+		return getRandomObject(cls, function, false);
+	}
+
+	private static <T> T getRandomObject(Class<T> cls, Function<Class<T>, T> function,
+		boolean withRandomizer) throws AssertionError
+	{
+		T first = null;
+		Optional<T> optionalRandomObject = forceNewRandomObject(cls, function, withRandomizer);
+		if (optionalRandomObject.isPresent())
+		{
+			first = optionalRandomObject.get();
+		}
+		else
+		{
+			throw new AssertionError("Failed to create random object.");
+		}
+		return first;
+	}
+
+	private static <T> Optional<T> forceNewRandomObject(Class<T> cls,
+		Function<Class<T>, T> function, boolean withRandomizer)
+	{
+		Optional<T> optionalRandomObject = Optional.empty();
+		if (withRandomizer)
+		{
+			optionalRandomObject = newRandomObjectWithRandomizer(cls, function);
+			if (!optionalRandomObject.isPresent())
+			{
+				optionalRandomObject = newRandomObjectWithRandomBeans(cls, function);
+			}
+		}
+		else
+		{
+			optionalRandomObject = newRandomObjectWithRandomBeans(cls, function);
+			if (!optionalRandomObject.isPresent())
+			{
+				optionalRandomObject = newRandomObjectWithRandomizer(cls, function);
+			}
+		}
+		return optionalRandomObject;
+	}
+
+	private static <T> Optional<T> newRandomObjectWithRandomBeans(Class<T> cls,
+		Function<Class<T>, T> function)
+	{
+		Optional<T> randomObject = Optional.empty();
+		try
+		{
+			randomObject = Optional.of(function.apply(cls));
+		}
+		catch (Exception e)
+		{
+			log.log(Level.INFO, "Failed to create random object with random beans.", e);
+		}
+		return randomObject;
+	}
+
+	private static <T> Optional<T> newRandomObjectWithRandomizer(Class<T> cls,
+		Function<Class<T>, T> function)
+	{
+		Optional<T> randomObject = Optional.empty();
+		try
+		{
+			randomObject = Optional.of(RandomObjectFactory.newRandomObject(cls));
+		}
+		catch (Exception e)
+		{
+			log.log(Level.INFO, "Failed to create random object with RandomObjectFactory", e);
+		}
+		return randomObject;
 	}
 
 	/**
