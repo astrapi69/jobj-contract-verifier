@@ -22,8 +22,28 @@ package de.alpharogroup.evaluate.object.verifier;
 
 import org.testng.annotations.Test;
 
+import de.alpharogroup.test.objects.A;
+import de.alpharogroup.test.objects.AlgorithmModel;
+import de.alpharogroup.test.objects.ClonableObject;
+import de.alpharogroup.test.objects.Company;
+import de.alpharogroup.test.objects.Customer;
+import de.alpharogroup.test.objects.Employee;
+import de.alpharogroup.test.objects.EmployeeList;
+import de.alpharogroup.test.objects.Light;
 import de.alpharogroup.test.objects.Member;
+import de.alpharogroup.test.objects.NotSerializable;
+import de.alpharogroup.test.objects.Permission;
 import de.alpharogroup.test.objects.Person;
+import de.alpharogroup.test.objects.PremiumMember;
+import de.alpharogroup.test.objects.Television;
+import de.alpharogroup.test.objects.annotations.classes.AnnotatedClass;
+import de.alpharogroup.test.objects.annotations.classes.AnnotatedTestClass;
+import de.alpharogroup.test.objects.annotations.classes.ClassExtendsAnnotatedInterface;
+import de.alpharogroup.test.objects.annotations.classes.SubAnnotatedClass;
+import de.alpharogroup.test.objects.auth.AccessRight;
+import de.alpharogroup.test.objects.auth.Role;
+import de.alpharogroup.test.objects.auth.Roles;
+import de.alpharogroup.test.objects.exceptions.ExceptionEvent;
 
 /**
  * The unit test class for the class {@link ContractVerifier}
@@ -37,7 +57,28 @@ public class ContractVerifierTest
 	@Test
 	public void testOfVerify()
 	{
-		ContractVerifier.of(Person.class).verify();
+		ContractVerifier.of(AnnotatedClass.class).verify();
+		ContractVerifier.of(AnnotatedTestClass.class).verify();
+		ContractVerifier.of(ClassExtendsAnnotatedInterface.class).verify();
+		ContractVerifier.of(SubAnnotatedClass.class).verify();
+		ContractVerifier.of(AccessRight.class).verify();
+		ContractVerifier.of(Roles.class).verify();
+		ContractVerifier.of(Role.class).verify();
+		ContractVerifier.of(ExceptionEvent.class).verify();
+		ContractVerifier.of(AlgorithmModel.class).verify();
+		ContractVerifier.of(A.class).verify();
+		ContractVerifier.of(ClonableObject.class).verify();
+		ContractVerifier.of(Company.class).verify();
+		ContractVerifier.of(Customer.class).verify();
+		ContractVerifier.of(EmployeeList.class).verify();
+		ContractVerifier.of(Employee.class).verify();
+		ContractVerifier.of(Light.class).verify();
 		ContractVerifier.of(Member.class).verify();
+		ContractVerifier.of(NotSerializable.class).verify();
+		ContractVerifier.of(Permission.class).verify();
+		ContractVerifier.of(Person.class).verify();
+		ContractVerifier.of(PremiumMember.class).verify();
+		ContractVerifier.of(Television.class).verify();
+		ContractVerifier.of(ManifestVersion.class).withFactoryFunction(clzz -> ManifestVersion.builder().build()).verify();
 	}
 }
