@@ -30,7 +30,7 @@ import de.alpharogroup.clone.object.CloneObjectExtensions;
 import de.alpharogroup.evaluate.object.api.ContractViolation;
 import de.alpharogroup.evaluate.object.enums.EqualsHashcodeContractViolation;
 import de.alpharogroup.evaluate.object.enums.ToStringContractViolation;
-import de.alpharogroup.random.RandomObjectFactory;
+import de.alpharogroup.random.object.RandomObjectFactory;
 import io.github.benas.randombeans.EnhancedRandomBuilder;
 import lombok.experimental.UtilityClass;
 import lombok.extern.java.Log;
@@ -319,9 +319,12 @@ public final class EqualsHashCodeAndToStringCheck
 		{
 			second = getRandomObject(cls, function);
 			count++;
-			try {
+			try
+			{
 				iterate = first.equals(second);
-			} catch(Exception e) {
+			}
+			catch (Exception e)
+			{
 				iterate = false;
 				log.log(Level.INFO, e.getMessage(), e);
 			}

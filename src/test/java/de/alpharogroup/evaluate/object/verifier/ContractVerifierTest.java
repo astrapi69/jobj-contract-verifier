@@ -79,6 +79,7 @@ public class ContractVerifierTest
 		ContractVerifier.of(Person.class).verify();
 		ContractVerifier.of(PremiumMember.class).verify();
 		ContractVerifier.of(Television.class).verify();
-		ContractVerifier.of(ManifestVersion.class).withFactoryFunction(clzz -> ManifestVersion.builder().build()).verify();
+		ContractVerifier.of(ManifestVersion.class)
+			.withFactoryFunction(clzz -> ManifestVersion.builder().build()).verify();
 	}
 }
