@@ -6,8 +6,8 @@ Version 3.3-SNAPSHOT
 
 CHANGED:
 
-- update of parent version to 5.2
-- update of dependency randomizer-core version to 6.1
+- update of parent version to 5.3
+- update of dependency randomizer-core version to 6.3
 
 Version 3.2
 -------------

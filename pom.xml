@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>5.2</version>
+		<version>5.3</version>
 	</parent>
 
 	<artifactId>jobj-contract-verifier</artifactId>
@@ -25,7 +25,7 @@
 		<!-- TEST-OBJECTS version -->
 		<test-objects.version>5.2</test-objects.version>
 		<!-- RANDOMIZER-CORE version -->
-		<randomizer-core.version>6.1</randomizer-core.version>
+		<randomizer-core.version>6.3</randomizer-core.version>
 	</properties>
 
 	<licenses>
