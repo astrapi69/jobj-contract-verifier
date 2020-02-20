@@ -55,7 +55,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- JOBJ-CONTRACT-VERIFIER version -->
-		<jobj-contract-verifier.version>3.2</jobj-contract-verifier.version>
+		<jobj-contract-verifier.version>3.3</jobj-contract-verifier.version>
 			...
 	</properties>
 			...
@@ -79,12 +79,12 @@ You can first define the version in the ext section and add than the following g
 ```
 ext {
 			...
-    jobjContractVerifierVersion = "3.2"
+    jobjContractVerifierVersion = "3.3"
 			...
 }
 dependencies {
 			...
-compile("de.alpharogroup:jobj-contract-verifier:$sillyStringsVersion")
+compile("de.alpharogroup:jobj-contract-verifier:$jobjContractVerifierVersion")
 			...
 }
 	
