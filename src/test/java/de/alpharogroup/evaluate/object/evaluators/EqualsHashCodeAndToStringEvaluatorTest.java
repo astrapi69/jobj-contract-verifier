@@ -25,7 +25,6 @@ import static org.testng.AssertJUnit.assertEquals;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
-import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
@@ -263,8 +262,7 @@ public class EqualsHashCodeAndToStringEvaluatorTest
 	/**
 	 * Test method for {@link EqualsHashCodeAndToStringEvaluator} with {@link BeanTester}
 	 */
-	@Test(expectedExceptions = { BeanTestException.class, InvocationTargetException.class,
-			UnsupportedOperationException.class })
+	@Test
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();

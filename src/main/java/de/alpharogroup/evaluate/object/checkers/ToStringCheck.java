@@ -24,40 +24,13 @@ import java.util.Optional;
 
 import de.alpharogroup.evaluate.object.api.ContractViolation;
 import de.alpharogroup.evaluate.object.enums.ToStringContractViolation;
-import lombok.experimental.UtilityClass;
 
 /**
  * The class {@link ToStringCheck} provides algorithms for evaluate the {@link Object#toString()}
  * method.
  */
-@UtilityClass
 public final class ToStringCheck
 {
-
-	/**
-	 * Checks if the given class implements the toString method.
-	 *
-	 * @param clazz
-	 *            the class
-	 * @return an empty {@link Optional} if no violation occurred or an {@link Optional} with the
-	 *         specific violation type
-	 */
-	public static Optional<ContractViolation> evaluate(Class<?> clazz)
-	{
-		if (clazz == null)
-		{
-			return Optional.of(ToStringContractViolation.CLASS_NULL_ARGUMENT);
-		}
-		try
-		{
-			clazz.getDeclaredMethod("toString");
-		}
-		catch (NoSuchMethodException ex)
-		{
-			return Optional.of(ToStringContractViolation.NOT_EXISTENT);
-		}
-		return Optional.empty();
-	}
 
 	/**
 	 * Checks consistency of method {@link Object#toString()} for the given objects <br>
@@ -107,6 +80,31 @@ public final class ToStringCheck
 	}
 
 	/**
+	 * Checks if the given class implements the toString method.
+	 *
+	 * @param clazz
+	 *            the class
+	 * @return an empty {@link Optional} if no violation occurred or an {@link Optional} with the
+	 *         specific violation type
+	 */
+	public static Optional<ContractViolation> evaluate(Class<?> clazz)
+	{
+		if (clazz == null)
+		{
+			return Optional.of(ToStringContractViolation.CLASS_NULL_ARGUMENT);
+		}
+		try
+		{
+			clazz.getDeclaredMethod("toString");
+		}
+		catch (NoSuchMethodException ex)
+		{
+			return Optional.of(ToStringContractViolation.NOT_EXISTENT);
+		}
+		return Optional.empty();
+	}
+
+	/**
 	 * Checks the all the contract conditions for the methods {@link Object#toString()}
 	 *
 	 * @param <T>
@@ -130,6 +128,10 @@ public final class ToStringCheck
 		}
 		evaluated = ToStringCheck.consistency(object);
 		return evaluated;
+	}
+
+	private ToStringCheck()
+	{
 	}
 
 }

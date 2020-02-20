@@ -1,7 +1,20 @@
 ## Change log
 ----------------------
 
-Version 3.2-SNAPSHOT
+Version 3.3
+-------------
+
+ADDED:
+ 
+- new build system gradle
+
+CHANGED:
+
+- removed maven build system and all related files
+- removed all lombok dependent imports
+- update of dependency randomizer-core version to 6.8
+
+Version 3.2
 -------------
 
 CHANGED:
