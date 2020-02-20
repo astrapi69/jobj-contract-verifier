@@ -22,12 +22,9 @@ package de.alpharogroup.evaluate.object.evaluators;
 
 import static java.lang.Math.signum;
 
-import lombok.experimental.UtilityClass;
-
 /**
  * The class {@link ComparableEvaluator} is intended to evaluate {@link Comparable} objects.
  */
-@UtilityClass
 public final class ComparableEvaluator
 {
 
@@ -91,6 +88,10 @@ public final class ComparableEvaluator
 	public static <T extends Comparable<T>> boolean evaluateTransitivity(T a, T b, T c)
 	{
 		return (0 <= b.compareTo(a)) && (0 <= c.compareTo(b)) && (0 <= c.compareTo(a));
+	}
+
+	private ComparableEvaluator()
+	{
 	}
 
 }

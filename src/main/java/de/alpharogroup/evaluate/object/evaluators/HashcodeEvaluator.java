@@ -21,14 +21,12 @@
 package de.alpharogroup.evaluate.object.evaluators;
 
 import de.alpharogroup.evaluate.object.checkers.HashcodeCheck;
-import lombok.experimental.UtilityClass;
 
 /**
  * The class {@link HashcodeEvaluator} provides algorithms for evaluate the
  * <a href= "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--">hashcode
  * contract</a> of an given object.
  */
-@UtilityClass
 public final class HashcodeEvaluator
 {
 
@@ -102,6 +100,10 @@ public final class HashcodeEvaluator
 	public static <T> boolean evaluateUnequality(T object, T anotherObject)
 	{
 		return !HashcodeCheck.unequality(object, anotherObject).isPresent();
+	}
+
+	private HashcodeEvaluator()
+	{
 	}
 
 }

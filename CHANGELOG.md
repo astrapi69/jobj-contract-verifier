@@ -4,10 +4,15 @@
 Version 3.3-SNAPSHOT
 -------------
 
+ADDED:
+ 
+- new build system gradle
+
 CHANGED:
 
-- update of parent version to 5.3
-- update of dependency randomizer-core version to 6.3
+- removed maven build system and all related files
+- removed all lombok dependent imports
+- update of dependency randomizer-core version to 6.8
 
 Version 3.2
 -------------

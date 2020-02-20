@@ -21,13 +21,11 @@
 package de.alpharogroup.evaluate.object.evaluators;
 
 import de.alpharogroup.evaluate.object.checkers.ToStringCheck;
-import lombok.experimental.UtilityClass;
 
 /**
  * The class {@link ToStringEvaluator} provides algorithms for evaluate the
  * {@link Object#toString()} method.
  */
-@UtilityClass
 public final class ToStringEvaluator
 {
 
@@ -74,6 +72,10 @@ public final class ToStringEvaluator
 	public static <T> boolean evaluateConsistency(T object, int iterations)
 	{
 		return !ToStringCheck.consistency(object, iterations).isPresent();
+	}
+
+	private ToStringEvaluator()
+	{
 	}
 
 }

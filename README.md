@@ -71,6 +71,25 @@ Than you can add the dependency to your dependencies:
 			...
 		</dependencies>
 
+			
+## gradle dependency
+
+You can first define the version in the ext section and add than the following gradle dependency to your project `build.gradle` if you want to import the core functionality of jobj-contract-verifier:
+
+```
+ext {
+			...
+    jobjContractVerifierVersion = "3.2"
+			...
+}
+dependencies {
+			...
+compile("de.alpharogroup:jobj-contract-verifier:$sillyStringsVersion")
+			...
+}
+	
+```
+
 ## Semantic Versioning
 
 The versions of jobj-contract-verifier are maintained with the Simplified Semantic Versioning guidelines.

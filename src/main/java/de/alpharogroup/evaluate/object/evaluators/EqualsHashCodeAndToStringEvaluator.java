@@ -25,12 +25,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.function.Function;
 
 import de.alpharogroup.evaluate.object.checkers.EqualsHashCodeAndToStringCheck;
-import lombok.experimental.UtilityClass;
 
 /**
  * The class {@link EqualsHashCodeAndToStringEvaluator} is a combination of all evaluators.
  */
-@UtilityClass
 public final class EqualsHashCodeAndToStringEvaluator
 {
 
@@ -254,7 +252,6 @@ public final class EqualsHashCodeAndToStringEvaluator
 		return !EqualsHashCodeAndToStringCheck.equalsHashcodeAndToString(object).isPresent();
 	}
 
-
 	/**
 	 * Evaluates the all the contract conditions for the methods {@link Object#equals(Object)},
 	 * {@link Object#hashCode()} and {@link Object#toString()}.
@@ -277,6 +274,11 @@ public final class EqualsHashCodeAndToStringEvaluator
 	{
 		return !EqualsHashCodeAndToStringCheck
 			.equalsHashcodeAndToString(first, second, third, fourth).isPresent();
+	}
+
+
+	private EqualsHashCodeAndToStringEvaluator()
+	{
 	}
 
 }

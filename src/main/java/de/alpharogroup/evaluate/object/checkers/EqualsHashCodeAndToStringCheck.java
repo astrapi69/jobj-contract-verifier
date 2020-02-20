@@ -25,6 +25,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import de.alpharogroup.clone.object.CloneObjectExtensions;
 import de.alpharogroup.evaluate.object.api.ContractViolation;
@@ -32,18 +33,16 @@ import de.alpharogroup.evaluate.object.enums.EqualsHashcodeContractViolation;
 import de.alpharogroup.evaluate.object.enums.ToStringContractViolation;
 import de.alpharogroup.random.object.RandomObjectFactory;
 import io.github.benas.randombeans.EnhancedRandomBuilder;
-import lombok.experimental.UtilityClass;
-import lombok.extern.java.Log;
 
 /**
  * The class {@link EqualsHashCodeAndToStringCheck} is a combination of all checks.
  */
-@UtilityClass
-@Log
 public final class EqualsHashCodeAndToStringCheck
 {
 	/** The Constant value for the default max iteration. */
 	public static final int DEFAULT_MAX_ITERATION = 9999;
+	private static final Logger log = Logger
+		.getLogger(EqualsHashCodeAndToStringCheck.class.getName());
 
 	/**
 	 * Checks all the contract conditions for the methods {@link Object#equals(Object)} and
@@ -90,38 +89,6 @@ public final class EqualsHashCodeAndToStringCheck
 			return evaluated;
 		}
 		return hashcodeCheck(first, second, fourth);
-	}
-
-	/**
-	 * Checks all the contract conditions for the method {@link Object#hashCode()}
-	 *
-	 * @param <T>
-	 *            the generic type
-	 * @param first
-	 *            the first object
-	 * @param second
-	 *            the second object that have to be uneqal to the first object
-	 * @param fourth
-	 *            the fourth object have to be equal to first object and third object
-	 * @return an empty {@link Optional} if no violation occurred or an {@link Optional} with the
-	 *         specific violation type
-	 */
-	public static <T> Optional<ContractViolation> hashcodeCheck(final T first, final T second,
-		final T fourth)
-	{
-		Optional<ContractViolation> evaluated;
-		evaluated = HashcodeCheck.equality(first, fourth);
-		if (evaluated.isPresent())
-		{
-			return evaluated;
-		}
-		evaluated = HashcodeCheck.unequality(first, second);
-		if (evaluated.isPresent())
-		{
-			return evaluated;
-		}
-		evaluated = HashcodeCheck.consistency(first);
-		return evaluated;
 	}
 
 	/**
@@ -309,105 +276,6 @@ public final class EqualsHashCodeAndToStringCheck
 			fourth);
 	}
 
-	private static <T> T getSecondRandomObject(Class<T> cls, Function<Class<T>, T> function,
-		T first) throws AssertionError
-	{
-		T second = null;
-		int count = 0;
-		boolean iterate = true;
-		do
-		{
-			second = getRandomObject(cls, function);
-			count++;
-			try
-			{
-				iterate = first.equals(second);
-			}
-			catch (Exception e)
-			{
-				iterate = false;
-				log.log(Level.INFO, e.getMessage(), e);
-			}
-		}
-		while (iterate && count < DEFAULT_MAX_ITERATION);
-		return second;
-	}
-
-	private static <T> T getRandomObject(Class<T> cls, Function<Class<T>, T> function)
-		throws AssertionError
-	{
-		return getRandomObject(cls, function, false);
-	}
-
-	private static <T> T getRandomObject(Class<T> cls, Function<Class<T>, T> function,
-		boolean withRandomizer) throws AssertionError
-	{
-		T first = null;
-		Optional<T> optionalRandomObject = forceNewRandomObject(cls, function, withRandomizer);
-		if (optionalRandomObject.isPresent())
-		{
-			first = optionalRandomObject.get();
-		}
-		else
-		{
-			throw new AssertionError("Failed to create random object.");
-		}
-		return first;
-	}
-
-	private static <T> Optional<T> forceNewRandomObject(Class<T> cls,
-		Function<Class<T>, T> function, boolean withRandomizer)
-	{
-		Optional<T> optionalRandomObject = Optional.empty();
-		if (withRandomizer)
-		{
-			optionalRandomObject = newRandomObjectWithRandomizer(cls, function);
-			if (!optionalRandomObject.isPresent())
-			{
-				optionalRandomObject = newRandomObjectWithRandomBeans(cls, function);
-			}
-		}
-		else
-		{
-			optionalRandomObject = newRandomObjectWithRandomBeans(cls, function);
-			if (!optionalRandomObject.isPresent())
-			{
-				optionalRandomObject = newRandomObjectWithRandomizer(cls, function);
-			}
-		}
-		return optionalRandomObject;
-	}
-
-	private static <T> Optional<T> newRandomObjectWithRandomBeans(Class<T> cls,
-		Function<Class<T>, T> function)
-	{
-		Optional<T> randomObject = Optional.empty();
-		try
-		{
-			randomObject = Optional.of(function.apply(cls));
-		}
-		catch (Exception e)
-		{
-			log.log(Level.INFO, "Failed to create random object with random beans.", e);
-		}
-		return randomObject;
-	}
-
-	private static <T> Optional<T> newRandomObjectWithRandomizer(Class<T> cls,
-		Function<Class<T>, T> function)
-	{
-		Optional<T> randomObject = Optional.empty();
-		try
-		{
-			randomObject = Optional.of(RandomObjectFactory.newRandomObject(cls));
-		}
-		catch (Exception e)
-		{
-			log.log(Level.INFO, "Failed to create random object with RandomObjectFactory", e);
-		}
-		return randomObject;
-	}
-
 	/**
 	 * Checks the contract conditions for reflexivity and non null, that means according to
 	 * {@link Object#equals(Object)} that this method should evaluate the following contract
@@ -484,6 +352,141 @@ public final class EqualsHashCodeAndToStringCheck
 			return evaluated;
 		}
 		return ToStringCheck.evaluateAndConsistency(first);
+	}
+
+	private static <T> Optional<T> forceNewRandomObject(Class<T> cls,
+		Function<Class<T>, T> function, boolean withRandomizer)
+	{
+		Optional<T> optionalRandomObject = Optional.empty();
+		if (withRandomizer)
+		{
+			optionalRandomObject = newRandomObjectWithRandomizer(cls, function);
+			if (!optionalRandomObject.isPresent())
+			{
+				optionalRandomObject = newRandomObjectWithRandomBeans(cls, function);
+			}
+		}
+		else
+		{
+			optionalRandomObject = newRandomObjectWithRandomBeans(cls, function);
+			if (!optionalRandomObject.isPresent())
+			{
+				optionalRandomObject = newRandomObjectWithRandomizer(cls, function);
+			}
+		}
+		return optionalRandomObject;
+	}
+
+	private static <T> T getRandomObject(Class<T> cls, Function<Class<T>, T> function)
+		throws AssertionError
+	{
+		return getRandomObject(cls, function, false);
+	}
+
+	private static <T> T getRandomObject(Class<T> cls, Function<Class<T>, T> function,
+		boolean withRandomizer) throws AssertionError
+	{
+		T first = null;
+		Optional<T> optionalRandomObject = forceNewRandomObject(cls, function, withRandomizer);
+		if (optionalRandomObject.isPresent())
+		{
+			first = optionalRandomObject.get();
+		}
+		else
+		{
+			throw new AssertionError("Failed to create random object.");
+		}
+		return first;
+	}
+
+	private static <T> T getSecondRandomObject(Class<T> cls, Function<Class<T>, T> function,
+		T first) throws AssertionError
+	{
+		T second = null;
+		int count = 0;
+		boolean iterate = true;
+		do
+		{
+			second = getRandomObject(cls, function);
+			count++;
+			try
+			{
+				iterate = first.equals(second);
+			}
+			catch (Exception e)
+			{
+				iterate = false;
+				log.log(Level.INFO, e.getMessage(), e);
+			}
+		}
+		while (iterate && count < DEFAULT_MAX_ITERATION);
+		return second;
+	}
+
+	/**
+	 * Checks all the contract conditions for the method {@link Object#hashCode()}
+	 *
+	 * @param <T>
+	 *            the generic type
+	 * @param first
+	 *            the first object
+	 * @param second
+	 *            the second object that have to be uneqal to the first object
+	 * @param fourth
+	 *            the fourth object have to be equal to first object and third object
+	 * @return an empty {@link Optional} if no violation occurred or an {@link Optional} with the
+	 *         specific violation type
+	 */
+	public static <T> Optional<ContractViolation> hashcodeCheck(final T first, final T second,
+		final T fourth)
+	{
+		Optional<ContractViolation> evaluated;
+		evaluated = HashcodeCheck.equality(first, fourth);
+		if (evaluated.isPresent())
+		{
+			return evaluated;
+		}
+		evaluated = HashcodeCheck.unequality(first, second);
+		if (evaluated.isPresent())
+		{
+			return evaluated;
+		}
+		evaluated = HashcodeCheck.consistency(first);
+		return evaluated;
+	}
+
+	private static <T> Optional<T> newRandomObjectWithRandomBeans(Class<T> cls,
+		Function<Class<T>, T> function)
+	{
+		Optional<T> randomObject = Optional.empty();
+		try
+		{
+			randomObject = Optional.of(function.apply(cls));
+		}
+		catch (Exception e)
+		{
+			log.log(Level.INFO, "Failed to create random object with random beans.", e);
+		}
+		return randomObject;
+	}
+
+	private static <T> Optional<T> newRandomObjectWithRandomizer(Class<T> cls,
+		Function<Class<T>, T> function)
+	{
+		Optional<T> randomObject = Optional.empty();
+		try
+		{
+			randomObject = Optional.of(RandomObjectFactory.newRandomObject(cls));
+		}
+		catch (Exception e)
+		{
+			log.log(Level.INFO, "Failed to create random object with RandomObjectFactory", e);
+		}
+		return randomObject;
+	}
+
+	private EqualsHashCodeAndToStringCheck()
+	{
 	}
 
 }

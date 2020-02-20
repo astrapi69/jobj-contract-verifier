@@ -24,14 +24,12 @@ import java.util.Optional;
 
 import de.alpharogroup.evaluate.object.api.ContractViolation;
 import de.alpharogroup.evaluate.object.enums.HashcodeContractViolation;
-import lombok.experimental.UtilityClass;
 
 /**
  * The class {@link HashcodeCheck} provides algorithms for check the
  * <a href= "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--">hashcode
  * contract</a> of an given object.
  */
-@UtilityClass
 public final class HashcodeCheck
 {
 
@@ -141,6 +139,10 @@ public final class HashcodeCheck
 			}
 		}
 		return Optional.of(HashcodeContractViolation.UNEQAUALITY);
+	}
+
+	private HashcodeCheck()
+	{
 	}
 
 }

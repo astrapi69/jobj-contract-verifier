@@ -22,16 +22,13 @@ package de.alpharogroup.evaluate.object.verifier;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 
 import de.alpharogroup.evaluate.object.api.ContractViolation;
 import de.alpharogroup.evaluate.object.checkers.EqualsHashCodeAndToStringCheck;
 import de.alpharogroup.evaluate.object.enums.VerificationType;
-import lombok.AccessLevel;
-import lombok.NonNull;
-import lombok.experimental.FieldDefaults;
-import lombok.experimental.NonFinal;
 
 /**
  * The class {@link ContractVerifier} can verify if the fulfillment of contracts from a given object
@@ -39,7 +36,6 @@ import lombok.experimental.NonFinal;
  * {@code equals}, {@code hashCode} and optionally {@code toString}. This can also improve the code
  * coverage of an project because the most methods of beans are tested.
  */
-@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public final class ContractVerifier<T>
 {
 
@@ -52,21 +48,20 @@ public final class ContractVerifier<T>
 	 *            the class
 	 * @return the contract verifier
 	 */
-	public static <T> ContractVerifier<T> of(final @NonNull Class<T> type)
+	public static <T> ContractVerifier<T> of(final Class<T> type)
 	{
+		Objects.requireNonNull(type);
 		return new ContractVerifier<>(type);
 	}
 
 	/** The cls. */
-	Class<T> cls;
+	private final Class<T> cls;
 
 	/** The factory function. */
-	@NonFinal
-	Function<Class<T>, T> factoryFunction;
+	private Function<Class<T>, T> factoryFunction;
 
 	/** The verification type. */
-	@NonFinal
-	VerificationType verificationType = VerificationType.EQUALS_HASHCODE_AND_TO_STRING;
+	private VerificationType verificationType = VerificationType.EQUALS_HASHCODE_AND_TO_STRING;
 
 	/**
 	 * Private constructor
@@ -74,9 +69,15 @@ public final class ContractVerifier<T>
 	 * @param cls
 	 *            the class
 	 */
-	private ContractVerifier(final @NonNull Class<T> cls)
+	private ContractVerifier(final Class<T> cls)
 	{
+		Objects.requireNonNull(cls);
 		this.cls = cls;
+	}
+
+	public VerificationType getVerificationType()
+	{
+		return verificationType;
 	}
 
 	/**
@@ -150,9 +151,9 @@ public final class ContractVerifier<T>
 	 *            the factory function
 	 * @return this {@link ContractVerifier}
 	 */
-	public ContractVerifier<T> withFactoryFunction(
-		final @NonNull Function<Class<T>, T> factoryFunction)
+	public ContractVerifier<T> withFactoryFunction(final Function<Class<T>, T> factoryFunction)
 	{
+		Objects.requireNonNull(factoryFunction);
 		this.factoryFunction = factoryFunction;
 		return this;
 	}
