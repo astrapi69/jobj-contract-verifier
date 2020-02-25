@@ -20,23 +20,23 @@
  */
 package de.alpharogroup.evaluate.object;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.experimental.FieldDefaults;
-
-@Getter
-@Setter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE)
 public class WeirdBadInconsistencyClass
 {
 	String name;
+
+	public WeirdBadInconsistencyClass(String name)
+	{
+		this.name = name;
+	}
+
+	public WeirdBadInconsistencyClass()
+	{
+	}
+
+	public static WeirdBadInconsistencyClassBuilder builder()
+	{
+		return new WeirdBadInconsistencyClassBuilder();
+	}
 
 	@Override
 	public boolean equals(Object o)
@@ -55,5 +55,41 @@ public class WeirdBadInconsistencyClass
 	public String toString()
 	{
 		return BaseEnhancedRandomExtensions.nextObject(String.class);
+	}
+
+	public String getName()
+	{
+		return this.name;
+	}
+
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public static class WeirdBadInconsistencyClassBuilder
+	{
+		private String name;
+
+		WeirdBadInconsistencyClassBuilder()
+		{
+		}
+
+		public WeirdBadInconsistencyClass.WeirdBadInconsistencyClassBuilder name(String name)
+		{
+			this.name = name;
+			return this;
+		}
+
+		public WeirdBadInconsistencyClass build()
+		{
+			return new WeirdBadInconsistencyClass(name);
+		}
+
+		public String toString()
+		{
+			return "WeirdBadInconsistencyClass.WeirdBadInconsistencyClassBuilder(name=" + this.name
+				+ ")";
+		}
 	}
 }
