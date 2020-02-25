@@ -3,7 +3,7 @@ plugins {
     id "java"
     id "maven-publish"
     id "signing"
-    id "com.github.ben-manes.versions" version "0.27.0"
+    id "com.github.ben-manes.versions" version "0.28.0"
     id "com.github.hierynomus.license" version "0.15.0"
 }
 
@@ -11,7 +11,7 @@ apply plugin: "jacoco"
 
 group = "de.alpharogroup"
 version = "$projectVersion"
-description = "jobj-contract-verifier"
+description = "$rootProject.name"
 sourceCompatibility = "1.8"
 
 repositories {
@@ -83,21 +83,21 @@ def releaseVersion = !version.endsWith("SNAPSHOT")
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifactId = "${rootProject.name}"
+            artifactId = "$rootProject.name"
             from components.java
             artifact sourcesJar
             artifact javadocJar
             pom {
-                name = "${rootProject.name}"
+                name = "$rootProject.name"
                 description = "Verify if java objects fulfill the contracts of equals, hashcode and toString"
-                url = "https://github.com/astrapi69/"+"${rootProject.name}"
+                url = "https://github.com/astrapi69/"+"$rootProject.name"
                 organization {
                     name = "Alpha Ro Group UG (haftungsbeschrängt)"
                     url = "http://www.alpharogroup.de/"
                 }
                 issueManagement {
                     system = "GitHub"
-                    url = "https://github.com/astrapi69/"+"${rootProject.name}"+"/issues"
+                    url = "https://github.com/astrapi69/"+"$rootProject.name"+"/issues"
                 }
                 licenses {
                     license {
@@ -113,9 +113,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection = "scm:git:git:@github.com:astrapi69/"+"${rootProject.name}"+".git"
-                    developerConnection = "scm:git:git@github.com:astrapi69/"+"${rootProject.name}"+".git"
-                    url = "git:@github.com:astrapi69/"+"${rootProject.name}"+".git"
+                    connection = "scm:git:git:@github.com:astrapi69/"+"$rootProject.name"+".git"
+                    developerConnection = "scm:git:git@github.com:astrapi69/"+"$rootProject.name"+".git"
+                    url = "git:@github.com:astrapi69/"+"$rootProject.name"+".git"
                 }
             }
         }

@@ -4,6 +4,11 @@
 Version 3.4-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of dependency jobj-clone to new version 3.3
+- update of gradle-plugin com.github.ben-manes.versions to new version 0.28.0
+
 Version 3.3
 -------------
 
