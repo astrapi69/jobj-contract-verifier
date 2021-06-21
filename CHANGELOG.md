@@ -1,6 +1,19 @@
 ## Change log
 ----------------------
 
+Version 3.4
+-------------
+
+CHANGED:
+
+- update of gradle to new version 6.9
+- update of dependency jobj-clone to new version 3.3
+- update of gradle-plugin com.github.ben-manes.versions to new version 0.39.0
+- update of dependency randomizer-core version to 8
+- update of test dependency testng to new version 7.4.0
+- update of test dependency test-objects to new version 5.4
+- changed to new package io.github.astrapi69
+
 Version 3.3
 -------------
 
