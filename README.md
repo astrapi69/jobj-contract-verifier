@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Build Status](https://travis-ci.org/astrapi69/jobj-contract-verifier.svg?branch=develop)](https://travis-ci.org/astrapi69/jobj-contract-verifier) 
+[![Build Status](https://api.travis-ci.com/astrapi69/jobj-contract-verifier.svg?branch=develop)](https://travis-ci.com/github/astrapi69/jobj-contract-verifier) 
 [![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-contract-verifier/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jobj-contract-verifier?branch=develop) 
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/jobj-contract-verifier.svg?style=flat)](https://github.com/astrapi69/jobj-contract-verifier/issues) 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-contract-verifier/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-contract-verifier)
@@ -123,8 +123,8 @@ Do not hesitate to contact the jobj-contract-verifier developers with your quest
 
 |**Travis CI**|
 |     :---:      |
-|[![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)](https://coveralls.io/github/astrapi69/jobj-contract-verifier?branch=develop)|
-|Special thanks to [Travis CI](https://travis-ci.org) for providing a free continuous integration service for open source projects|
+|[![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)](https://travis-ci.com/github)|
+|Special thanks to [Travis CI](https://travis-ci.com/github) for providing a free continuous integration service for open source projects|
 |     <img width=1000/>     |
 
 |**Nexus Sonatype repositories**|
