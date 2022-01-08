@@ -41,20 +41,20 @@ public class WeirdBadInconsistencyClass
 	@Override
 	public boolean equals(Object o)
 	{
-		boolean randomBoolean = BaseEnhancedRandomExtensions.nextObject(boolean.class);
+		boolean randomBoolean = EasyRandomExtensions.nextObject(boolean.class);
 		return randomBoolean;
 	}
 
 	@Override
 	public int hashCode()
 	{
-		return BaseEnhancedRandomExtensions.nextObject(Integer.class);
+		return EasyRandomExtensions.nextObject(Integer.class);
 	}
 
 	@Override
 	public String toString()
 	{
-		return BaseEnhancedRandomExtensions.nextObject(String.class);
+		return EasyRandomExtensions.nextObject(String.class);
 	}
 
 	public String getName()

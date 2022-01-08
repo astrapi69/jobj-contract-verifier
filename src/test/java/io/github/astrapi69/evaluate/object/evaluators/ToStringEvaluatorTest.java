@@ -30,7 +30,7 @@ import java.io.Serializable;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.evaluate.object.BaseEnhancedRandomExtensions;
+import io.github.astrapi69.evaluate.object.EasyRandomExtensions;
 import io.github.astrapi69.evaluate.object.Person;
 
 /**
@@ -82,7 +82,7 @@ public class ToStringEvaluatorTest
 			@Override
 			public String toString()
 			{
-				return BaseEnhancedRandomExtensions.nextObject(String.class);
+				return EasyRandomExtensions.nextObject(String.class);
 			}
 		});
 		expected = false;

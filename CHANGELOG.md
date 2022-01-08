@@ -4,6 +4,22 @@
 Version 3.5-SNAPSHOT
 -------------
 
+ADDED:
+
+- new gradle-plugin org.ajoberstar.grgit:grgit-gradle in version 4.1.1 for create git tags
+- new gradle options for improve gradle build performance
+- new dependency org.jeasy:easy-random-core in version 4.3.0
+
+CHANGED:
+
+- update of gradle to new version 7.3.3
+- update of dependency jobj-clone to new version 3.4
+- update of gradle-plugin com.github.ben-manes.versions to new version 0.41.0
+- update of dependency randomizer version to 8.5
+- update of test dependency testng to new version 7.5
+- update of test dependency test-objects to new version 5.7
+- removed of dependency io.github.benas:random-beans
+
 Version 3.4
 -------------
 

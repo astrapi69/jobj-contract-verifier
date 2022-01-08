@@ -33,7 +33,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.evaluate.object.BaseEnhancedRandomExtensions;
+import io.github.astrapi69.evaluate.object.EasyRandomExtensions;
 import io.github.astrapi69.evaluate.object.Person;
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
 import io.github.astrapi69.evaluate.object.enums.ToStringContractViolation;
@@ -87,7 +87,7 @@ public class ToStringCheckTest
 			@Override
 			public String toString()
 			{
-				return BaseEnhancedRandomExtensions.nextObject(String.class);
+				return EasyRandomExtensions.nextObject(String.class);
 			}
 		});
 		expected = Optional.of(ToStringContractViolation.CONSISTENCY);

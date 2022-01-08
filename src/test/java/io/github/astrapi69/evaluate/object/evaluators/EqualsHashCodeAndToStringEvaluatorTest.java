@@ -28,7 +28,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.evaluate.object.BaseEnhancedRandomExtensions;
+import io.github.astrapi69.evaluate.object.EasyRandomExtensions;
 import io.github.astrapi69.evaluate.object.Person;
 
 /**
@@ -220,21 +220,21 @@ public class EqualsHashCodeAndToStringEvaluatorTest
 		boolean actual;
 
 		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(null,
-			BaseEnhancedRandomExtensions::nextObject);
+			EasyRandomExtensions::nextObject);
 		expected = false;
 		assertEquals(expected, actual);
 
 		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(Person.class,
-			BaseEnhancedRandomExtensions::nextObject);
+			EasyRandomExtensions::nextObject);
 		expected = true;
 		assertEquals(expected, actual);
 
 		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(Integer.class,
-			BaseEnhancedRandomExtensions::nextObject);
+			EasyRandomExtensions::nextObject);
 		assertEquals(expected, actual);
 
 		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(String.class,
-			BaseEnhancedRandomExtensions::nextObject);
+			EasyRandomExtensions::nextObject);
 		assertEquals(expected, actual);
 	}
 

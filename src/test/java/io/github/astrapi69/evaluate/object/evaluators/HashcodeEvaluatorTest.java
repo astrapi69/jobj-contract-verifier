@@ -25,7 +25,7 @@ import static org.testng.AssertJUnit.assertEquals;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.evaluate.object.BaseEnhancedRandomExtensions;
+import io.github.astrapi69.evaluate.object.EasyRandomExtensions;
 import io.github.astrapi69.evaluate.object.Person;
 
 /**
@@ -63,7 +63,7 @@ public class HashcodeEvaluatorTest
 			@Override
 			public int hashCode()
 			{
-				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
+				return EasyRandomExtensions.nextObject(Integer.class);
 			}
 		});
 		expected = false;
@@ -95,14 +95,14 @@ public class HashcodeEvaluatorTest
 			@Override
 			public int hashCode()
 			{
-				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
+				return EasyRandomExtensions.nextObject(Integer.class);
 			}
 		}, new Person()
 		{
 			@Override
 			public int hashCode()
 			{
-				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
+				return EasyRandomExtensions.nextObject(Integer.class);
 			}
 		});
 		expected = false;
