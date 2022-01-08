@@ -8,12 +8,71 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-contract-verifier/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-contract-verifier)
 [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jobj-contract-verifier.svg)](http://www.javadoc.io/doc/de.alpharogroup/jobj-contract-verifier)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
+[![Hits Of Code](https://hitsofcode.com/github/astrapi69/jobj-contract-verifier)](https://hitsofcode.com/github/astrapi69/jobj-contract-verifier/view)
+[![Lines Of Code](https://tokei.rs/b1/github/astrapi69/jobj-contract-verifier)](https://github.com/astrapi69/jobj-contract-verifier)
 
 </div>
 
 Utility library for verify if java objects fulfill the contracts of equals, hashcode and toString.
 
-If you like this project put a ⭐ and donate.
+> Please support this project by simply putting a Github <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/astrapi69/jobj-contract-verifier" data-icon="octicon-star" aria-label="Star astrapi69/jobj-contract-verifier on GitHub">Star ⭐</a>
+>
+> Share this library with friends on Twitter and everywhere else you can
+>
+> If you love this project [![donation](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
+
+
+## gradle dependency
+
+You can first define the version in the ext section and add than the following gradle dependency to
+your project `build.gradle` if you want to import the core functionality of jobj-contract-verifier:
+
+define version in file gradle.properties
+
+```
+jobjContractVerifierVersion=3.5
+```
+
+or in build.gradle ext area
+
+```
+    jobjContractVerifierVersion = "3.5"
+```
+
+and than add the dependency to the dependencies area
+
+```
+    testImplementation("io.github.astrapi69:jobj-contract-verifier:$jobjContractVerifierVersion")
+```
+
+## Maven dependency
+
+Maven dependency is now on sonatype.
+Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~jobj-contract-verifier~~~) for latest snapshots and releases.
+
+Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of jobj-contract-verifier:
+
+Than you can add the dependency to your dependencies:
+
+	<properties>
+			...
+		<!-- JOBJ-CONTRACT-VERIFIER version -->
+		<jobj-contract-verifier.version>3.5</jobj-contract-verifier.version>
+			...
+	</properties>
+			...
+		<dependencies>
+			...
+			<!-- JOBJ-CONTRACT-VERIFIER DEPENDENCY -->
+			<dependency>
+				<groupId>io.github.astrapi69</groupId>
+				<artifactId>jobj-contract-verifier</artifactId>
+				<version>${jobj-contract-verifier.version}</version>
+				<scope>test</scope>
+			</dependency>
+			...
+		</dependencies>
 
 # Donations
 
@@ -80,68 +139,6 @@ No animals were harmed in the making of this library.
 ## License
 
 The source code comes under the liberal MIT License, making jobj-contract-verifier great for all types of applications.
-
-## Maven dependency
-
-Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~jobj-contract-verifier~~~) for latest snapshots and releases.
-
-Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of jobj-contract-verifier:
-
-Than you can add the dependency to your dependencies:
-
-	<properties>
-			...
-		<!-- JOBJ-CONTRACT-VERIFIER version -->
-		<jobj-contract-verifier.version>3.4</jobj-contract-verifier.version>
-			...
-	</properties>
-			...
-		<dependencies>
-			...
-			<!-- JOBJ-CONTRACT-VERIFIER DEPENDENCY -->
-			<dependency>
-				<groupId>io.github.astrapi69</groupId>
-				<artifactId>jobj-contract-verifier</artifactId>
-				<version>${jobj-contract-verifier.version}</version>
-				<scope>test</scope>
-			</dependency>
-			...
-		</dependencies>
-
-			
-## gradle dependency
-
-You can first define the version in the ext section and add than the following gradle dependency to 
-your project `build.gradle` if you want to import the core functionality of jobj-contract-verifier:
-
-define version in file gradle.properties
-
-```
-
-jobjContractVerifierVersion=3.4
-```
-
-or in build.gradle ext area
-
-```
-ext {
-			...
-    jobjContractVerifierVersion = "3.4"
-			...
-}
-```
-
-and than add the dependency to the dependencies area
-
-```
-dependencies {
-			...
-compile("io.github.astrapi69:jobj-contract-verifier:$jobjContractVerifierVersion")
-			...
-}
-	
-```
 
 ## Semantic Versioning
 

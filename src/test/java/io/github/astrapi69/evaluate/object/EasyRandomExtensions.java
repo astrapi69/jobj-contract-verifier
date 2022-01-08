@@ -20,20 +20,19 @@
  */
 package io.github.astrapi69.evaluate.object;
 
-import io.github.benas.randombeans.EnhancedRandomBuilder;
-import io.github.benas.randombeans.api.EnhancedRandom;
+import org.jeasy.random.EasyRandom;
 
-public final class BaseEnhancedRandomExtensions
+public final class EasyRandomExtensions
 {
-	private static final EnhancedRandom ENHANCED_RANDOM = new EnhancedRandomBuilder().build();
+	private static final EasyRandom EASY_RANDOM = new EasyRandom();
 
-	private BaseEnhancedRandomExtensions()
+	private EasyRandomExtensions()
 	{
 	}
 
-	public static <T> T nextObject(Class<T> type, String... excludedFields)
+	public static <T> T nextObject(Class<T> type)
 	{
-		return ENHANCED_RANDOM.nextObject(type, excludedFields);
+		return EASY_RANDOM.nextObject(type);
 	}
 
 }

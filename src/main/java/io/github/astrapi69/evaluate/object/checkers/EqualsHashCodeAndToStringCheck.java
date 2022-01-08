@@ -27,12 +27,13 @@ import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import de.alpharogroup.clone.object.CloneObjectExtensions;
+import org.jeasy.random.EasyRandom;
+
+import io.github.astrapi69.clone.object.CloneObjectExtensions;
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
 import io.github.astrapi69.evaluate.object.enums.EqualsHashcodeContractViolation;
 import io.github.astrapi69.evaluate.object.enums.ToStringContractViolation;
-import de.alpharogroup.random.object.RandomObjectFactory;
-import io.github.benas.randombeans.EnhancedRandomBuilder;
+import io.github.astrapi69.random.object.RandomObjectFactory;
 
 /**
  * The class {@link EqualsHashCodeAndToStringCheck} is a combination of all checks.
@@ -224,7 +225,7 @@ public final class EqualsHashCodeAndToStringCheck
 		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
 		InstantiationException, IOException, ClassNotFoundException, NoSuchFieldException
 	{
-		Function<Class<T>, T> function = new EnhancedRandomBuilder().build()::nextObject;
+		Function<Class<T>, T> function = new EasyRandom()::nextObject;
 		return equalsHashcodeAndToString(cls, function);
 	}
 

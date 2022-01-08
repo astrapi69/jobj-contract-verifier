@@ -31,7 +31,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.evaluate.object.BaseEnhancedRandomExtensions;
+import io.github.astrapi69.evaluate.object.EasyRandomExtensions;
 import io.github.astrapi69.evaluate.object.Person;
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
 import io.github.astrapi69.evaluate.object.enums.EqualsContractViolation;
@@ -263,7 +263,7 @@ public class EqualsHashCodeAndToStringCheckTest
 			@Override
 			public int hashCode()
 			{
-				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
+				return EasyRandomExtensions.nextObject(Integer.class);
 			}
 		});
 		expected = Optional.of(HashcodeContractViolation.CONSISTENCY);
@@ -286,14 +286,14 @@ public class EqualsHashCodeAndToStringCheckTest
 			@Override
 			public int hashCode()
 			{
-				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
+				return EasyRandomExtensions.nextObject(Integer.class);
 			}
 		}, Person.builder().build(), new Person()
 		{
 			@Override
 			public int hashCode()
 			{
-				return BaseEnhancedRandomExtensions.nextObject(Integer.class);
+				return EasyRandomExtensions.nextObject(Integer.class);
 			}
 		});
 		expected = Optional.of(HashcodeContractViolation.EQAUALITY);
