@@ -27,7 +27,7 @@ import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.jeasy.random.EasyRandom;
+//import org.jeasy.random.EasyRandom;
 
 import io.github.astrapi69.clone.object.CloneObjectExtensions;
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
@@ -225,7 +225,7 @@ public final class EqualsHashCodeAndToStringCheck
 		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
 		InstantiationException, IOException, ClassNotFoundException, NoSuchFieldException
 	{
-		Function<Class<T>, T> function = new EasyRandom()::nextObject;
+		Function<Class<T>, T> function = null;
 		return equalsHashcodeAndToString(cls, function);
 	}
 

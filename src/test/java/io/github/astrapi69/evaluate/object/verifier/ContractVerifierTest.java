@@ -22,28 +22,28 @@ package io.github.astrapi69.evaluate.object.verifier;
 
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.test.objects.A;
-import io.github.astrapi69.test.objects.AlgorithmModel;
-import io.github.astrapi69.test.objects.ClonableObject;
-import io.github.astrapi69.test.objects.Company;
-import io.github.astrapi69.test.objects.Customer;
-import io.github.astrapi69.test.objects.Employee;
-import io.github.astrapi69.test.objects.EmployeeList;
-import io.github.astrapi69.test.objects.Light;
-import io.github.astrapi69.test.objects.Member;
-import io.github.astrapi69.test.objects.NotSerializable;
-import io.github.astrapi69.test.objects.Permission;
-import io.github.astrapi69.test.objects.Person;
-import io.github.astrapi69.test.objects.PremiumMember;
-import io.github.astrapi69.test.objects.Television;
-import io.github.astrapi69.test.objects.annotations.classes.AnnotatedClass;
-import io.github.astrapi69.test.objects.annotations.classes.AnnotatedTestClass;
-import io.github.astrapi69.test.objects.annotations.classes.ClassExtendsAnnotatedInterface;
-import io.github.astrapi69.test.objects.annotations.classes.SubAnnotatedClass;
-import io.github.astrapi69.test.objects.auth.AccessRight;
-import io.github.astrapi69.test.objects.auth.Role;
-import io.github.astrapi69.test.objects.auth.Roles;
-import io.github.astrapi69.test.objects.exceptions.ExceptionEvent;
+import io.github.astrapi69.test.object.A;
+import io.github.astrapi69.test.object.AlgorithmModel;
+import io.github.astrapi69.test.object.ClonableObject;
+import io.github.astrapi69.test.object.Company;
+import io.github.astrapi69.test.object.Customer;
+import io.github.astrapi69.test.object.Employee;
+import io.github.astrapi69.test.object.EmployeeList;
+import io.github.astrapi69.test.object.Light;
+import io.github.astrapi69.test.object.Member;
+import io.github.astrapi69.test.object.NotSerializable;
+import io.github.astrapi69.test.object.Permission;
+import io.github.astrapi69.test.object.Person;
+import io.github.astrapi69.test.object.PremiumMember;
+import io.github.astrapi69.test.object.Television;
+import io.github.astrapi69.test.object.annotation.classtype.AnnotatedClass;
+import io.github.astrapi69.test.object.annotation.classtype.AnnotatedTestClass;
+import io.github.astrapi69.test.object.annotation.classtype.ClassExtendsAnnotatedInterface;
+import io.github.astrapi69.test.object.annotation.classtype.SubAnnotatedClass;
+import io.github.astrapi69.test.object.auth.AccessRight;
+import io.github.astrapi69.test.object.auth.Role;
+import io.github.astrapi69.test.object.auth.Roles;
+import io.github.astrapi69.test.object.exception.ExceptionEvent;
 
 /**
  * The unit test class for the class {@link ContractVerifier}

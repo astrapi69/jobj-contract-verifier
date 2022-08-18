@@ -24,12 +24,12 @@ import static org.testng.AssertJUnit.assertEquals;
 
 import java.util.Optional;
 
+import io.github.astrapi69.random.number.RandomIntFactory;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.evaluate.object.EasyRandomExtensions;
 import io.github.astrapi69.evaluate.object.Person;
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
 import io.github.astrapi69.evaluate.object.enums.HashcodeContractViolation;
@@ -41,7 +41,15 @@ public class HashcodeCheckTest
 {
 
 	/** The boolean actual result of the tests. */
-	protected Optional<ContractViolation> actual;
+	protected Optional<ContractViolation> actual = HashcodeCheck.consistency(new Person()
+	{
+
+		@Override
+		public int hashCode()
+		{
+			return RandomIntFactory.randomInt();
+		}
+	});
 
 	/** The boolean expected result of the tests. */
 	protected Optional<ContractViolation> expected;
@@ -92,7 +100,7 @@ public class HashcodeCheckTest
 			@Override
 			public int hashCode()
 			{
-				return EasyRandomExtensions.nextObject(Integer.class);
+				return RandomIntFactory.randomInt();
 			}
 		});
 		expected = Optional.of(HashcodeContractViolation.CONSISTENCY);
@@ -123,7 +131,7 @@ public class HashcodeCheckTest
 			@Override
 			public int hashCode()
 			{
-				return EasyRandomExtensions.nextObject(Integer.class);
+				return RandomIntFactory.randomInt();
 			}
 		}, new Person()
 		{
@@ -131,7 +139,7 @@ public class HashcodeCheckTest
 			@Override
 			public int hashCode()
 			{
-				return EasyRandomExtensions.nextObject(Integer.class);
+				return RandomIntFactory.randomInt();
 			}
 		});
 		expected = Optional.of(HashcodeContractViolation.EQAUALITY);
@@ -166,7 +174,7 @@ public class HashcodeCheckTest
 			@Override
 			public int hashCode()
 			{
-				return EasyRandomExtensions.nextObject(Integer.class);
+				return RandomIntFactory.randomInt();
 			}
 		}, new Person()
 		{
@@ -174,7 +182,7 @@ public class HashcodeCheckTest
 			@Override
 			public int hashCode()
 			{
-				return EasyRandomExtensions.nextObject(Integer.class);
+				return RandomIntFactory.randomInt();
 			}
 		});
 		expected = Optional.of(HashcodeContractViolation.UNEQAUALITY);

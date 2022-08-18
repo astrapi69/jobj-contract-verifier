@@ -1,10 +1,20 @@
 ## Change log
 ----------------------
 
-Version 3.6-SNAPSHOT
+Version 4-SNAPSHOT
 -------------
 
+ADDED:
 
+- new gradle-plugin 'com.diffplug.spotless:spotless-plugin-gradle' in version 6.9.1 for formatting source code
+
+CHANGED:
+
+- update of jdk to version 11
+- update of gradle to new version 7.5.1
+- update of gradle-plugin org.ajoberstar.grgit:grgit-gradle to new version 5.0.0
+- update of dependency randomizer version to 8.6
+- update of test dependency test-object to new version 6.1
 
 Version 3.5
 -------------

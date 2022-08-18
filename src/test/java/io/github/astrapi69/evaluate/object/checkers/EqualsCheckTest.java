@@ -27,12 +27,13 @@ import static org.testng.AssertJUnit.assertEquals;
 
 import java.util.Optional;
 
+import io.github.astrapi69.random.number.RandomBooleanFactory;
+import io.github.astrapi69.random.number.RandomIntFactory;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.evaluate.object.EasyRandomExtensions;
 import io.github.astrapi69.evaluate.object.Person;
 import io.github.astrapi69.evaluate.object.WeirdBadInconsistencyClass;
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
@@ -99,13 +100,13 @@ public class EqualsCheckTest
 			@Override
 			public boolean equals(Object o)
 			{
-				return EasyRandomExtensions.nextObject(boolean.class);
+				return RandomBooleanFactory.randomBoolean();
 			}
 
 			@Override
 			public int hashCode()
 			{
-				return EasyRandomExtensions.nextObject(Integer.class);
+				return RandomIntFactory.randomInt();
 			}
 		}, Person.builder().build());
 		expected = Optional.of(EqualsContractViolation.CONSISTENCY);

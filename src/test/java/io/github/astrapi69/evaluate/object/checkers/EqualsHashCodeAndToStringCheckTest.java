@@ -26,12 +26,13 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Optional;
 
+import io.github.astrapi69.random.number.RandomIntFactory;
+import io.github.astrapi69.random.object.RandomObjectFactory;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.evaluate.object.EasyRandomExtensions;
 import io.github.astrapi69.evaluate.object.Person;
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
 import io.github.astrapi69.evaluate.object.enums.EqualsContractViolation;
@@ -263,7 +264,7 @@ public class EqualsHashCodeAndToStringCheckTest
 			@Override
 			public int hashCode()
 			{
-				return EasyRandomExtensions.nextObject(Integer.class);
+				return RandomIntFactory.randomInt();
 			}
 		});
 		expected = Optional.of(HashcodeContractViolation.CONSISTENCY);
@@ -286,14 +287,14 @@ public class EqualsHashCodeAndToStringCheckTest
 			@Override
 			public int hashCode()
 			{
-				return EasyRandomExtensions.nextObject(Integer.class);
+				return RandomIntFactory.randomInt();
 			}
 		}, Person.builder().build(), new Person()
 		{
 			@Override
 			public int hashCode()
 			{
-				return EasyRandomExtensions.nextObject(Integer.class);
+				return RandomIntFactory.randomInt();
 			}
 		});
 		expected = Optional.of(HashcodeContractViolation.EQAUALITY);
