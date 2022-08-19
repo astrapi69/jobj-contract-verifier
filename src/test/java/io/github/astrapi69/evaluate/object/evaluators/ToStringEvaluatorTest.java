@@ -27,10 +27,10 @@ import static org.testng.AssertJUnit.assertEquals;
 
 import java.io.Serializable;
 
+import io.github.astrapi69.random.object.RandomStringFactory;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.evaluate.object.EasyRandomExtensions;
 import io.github.astrapi69.evaluate.object.Person;
 
 /**
@@ -82,7 +82,7 @@ public class ToStringEvaluatorTest
 			@Override
 			public String toString()
 			{
-				return EasyRandomExtensions.nextObject(String.class);
+				return RandomStringFactory.newRandomString();
 			}
 		});
 		expected = false;

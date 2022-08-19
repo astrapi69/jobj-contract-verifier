@@ -22,14 +22,8 @@ package io.github.astrapi69.evaluate.object.evaluators;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
-
-import io.github.astrapi69.evaluate.object.EasyRandomExtensions;
-import io.github.astrapi69.evaluate.object.Person;
 
 /**
  * The unit test class for the class {@link EqualsHashCodeAndToStringEvaluator}.
@@ -151,95 +145,6 @@ public class EqualsHashCodeAndToStringEvaluatorTest
 
 	/**
 	 * Test method for
-	 * {@link EqualsHashCodeAndToStringEvaluator#evaluateEqualsHashcodeAndToString(Class)}
-	 *
-	 * @throws IllegalAccessException
-	 *             if the caller does not have access to the property accessor method
-	 * @throws InstantiationException
-	 *             if a new instance of the bean's class cannot be instantiated
-	 * @throws InvocationTargetException
-	 *             if the property accessor method throws an exception
-	 * @throws NoSuchMethodException
-	 *             if an accessor method for this property cannot be found
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
-	 * @throws ClassNotFoundException
-	 *             occurs if a given class cannot be located by the specified class loader
-	 * @throws NoSuchFieldException
-	 *             is thrown if no such field exists
-	 */
-	@Test(enabled = true)
-	public void testEvaluateEqualsHashcodeAndToStringClass()
-		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
-		InstantiationException, IOException, ClassNotFoundException, NoSuchFieldException
-	{
-		boolean expected;
-		boolean actual;
-
-		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(null);
-		expected = false;
-		assertEquals(expected, actual);
-
-		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(Person.class);
-		expected = true;
-		assertEquals(expected, actual);
-
-		actual = EqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToString(Integer.class);
-		assertEquals(expected, actual);
-
-		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(String.class);
-		assertEquals(expected, actual);
-	}
-
-	/**
-	 * Test method for
-	 * {@link EqualsHashCodeAndToStringEvaluator#evaluateEqualsHashcodeAndToString(Class, java.util.function.Function)}
-	 *
-	 * @throws IllegalAccessException
-	 *             if the caller does not have access to the property accessor method
-	 * @throws InstantiationException
-	 *             if a new instance of the bean's class cannot be instantiated
-	 * @throws InvocationTargetException
-	 *             if the property accessor method throws an exception
-	 * @throws NoSuchMethodException
-	 *             if an accessor method for this property cannot be found
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
-	 * @throws ClassNotFoundException
-	 *             occurs if a given class cannot be located by the specified class loader
-	 * @throws NoSuchFieldException
-	 *             is thrown if no such field exists
-	 */
-	@Test(enabled = true)
-	public void testEvaluateEqualsHashcodeAndToStringClassAndFuction()
-		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
-		InstantiationException, IOException, ClassNotFoundException, NoSuchFieldException
-	{
-		boolean expected;
-		boolean actual;
-
-		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(null,
-			EasyRandomExtensions::nextObject);
-		expected = false;
-		assertEquals(expected, actual);
-
-		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(Person.class,
-			EasyRandomExtensions::nextObject);
-		expected = true;
-		assertEquals(expected, actual);
-
-		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(Integer.class,
-			EasyRandomExtensions::nextObject);
-		assertEquals(expected, actual);
-
-		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(String.class,
-			EasyRandomExtensions::nextObject);
-		assertEquals(expected, actual);
-	}
-
-	/**
-	 * Test method for
 	 * {@link EqualsHashCodeAndToStringEvaluator#evaluateEqualsHashcodeAndToString(Object)}
 	 */
 	@Test(enabled = true)
@@ -254,7 +159,7 @@ public class EqualsHashCodeAndToStringEvaluatorTest
 		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString("foo");
 		assertEquals(expected, actual);
 
-		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString((Object)null);
+		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(null);
 		expected = false;
 		assertEquals(expected, actual);
 	}

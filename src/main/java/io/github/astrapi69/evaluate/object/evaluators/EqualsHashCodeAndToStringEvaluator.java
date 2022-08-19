@@ -20,10 +20,6 @@
  */
 package io.github.astrapi69.evaluate.object.evaluators;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.util.function.Function;
-
 import io.github.astrapi69.evaluate.object.checkers.EqualsHashCodeAndToStringCheck;
 
 /**
@@ -144,74 +140,6 @@ public final class EqualsHashCodeAndToStringEvaluator
 	{
 		return !EqualsHashCodeAndToStringCheck.equalsAndHashcodeUnequality(object, otherObject)
 			.isPresent();
-	}
-
-	/**
-	 * Evaluates all the contract conditions for the methods {@link Object#equals(Object)},
-	 * {@link Object#hashCode()} and {@link Object#toString()} from the given {@link Class}.
-	 *
-	 * @param <T>
-	 *            the generic type
-	 * @param cls
-	 *            the class
-	 * @return true, if all contract conditions for the methods {@link Object#equals(Object)},
-	 *         {@link Object#hashCode()} and {@link Object#toString()} is given otherwise false
-	 *
-	 * @throws IllegalAccessException
-	 *             if the caller does not have access to the property accessor method
-	 * @throws InstantiationException
-	 *             if a new instance of the bean's class cannot be instantiated
-	 * @throws InvocationTargetException
-	 *             if the property accessor method throws an exception
-	 * @throws NoSuchMethodException
-	 *             if an accessor method for this property cannot be found
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
-	 * @throws ClassNotFoundException
-	 *             occurs if a given class cannot be located by the specified class loader
-	 * @throws NoSuchFieldException
-	 *             is thrown if no such field exists
-	 */
-	public static <T> boolean evaluateEqualsHashcodeAndToString(Class<T> cls)
-		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
-		InstantiationException, IOException, ClassNotFoundException, NoSuchFieldException
-	{
-		return !EqualsHashCodeAndToStringCheck.equalsHashcodeAndToString(cls).isPresent();
-	}
-
-	/**
-	 * Evaluates all the contract conditions for the methods {@link Object#equals(Object)},
-	 * {@link Object#hashCode()} and {@link Object#toString()} from the given {@link Class}.
-	 *
-	 * @param <T>
-	 *            the generic type
-	 * @param cls
-	 *            the class
-	 * @param function
-	 *            the function that can create random objects
-	 * @return true, if all contract conditions for the methods {@link Object#equals(Object)},
-	 *         {@link Object#hashCode()} and {@link Object#toString()} is given otherwise false
-	 * @throws NoSuchMethodException
-	 *             if an accessor method for this property cannot be found
-	 * @throws IllegalAccessException
-	 *             if the caller does not have access to the property accessor method
-	 * @throws InvocationTargetException
-	 *             if the property accessor method throws an exception
-	 * @throws InstantiationException
-	 *             if a new instance of the bean's class cannot be instantiated
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
-	 * @throws ClassNotFoundException
-	 *             occurs if a given class cannot be located by the specified class loader
-	 * @throws NoSuchFieldException
-	 *             is thrown if no such field exists
-	 */
-	public static <T> boolean evaluateEqualsHashcodeAndToString(Class<T> cls,
-		Function<Class<T>, T> function)
-		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
-		InstantiationException, IOException, ClassNotFoundException, NoSuchFieldException
-	{
-		return !EqualsHashCodeAndToStringCheck.equalsHashcodeAndToString(cls, function).isPresent();
 	}
 
 	/**
