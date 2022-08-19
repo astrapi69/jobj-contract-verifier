@@ -1,7 +1,6 @@
 dependencies {
-    implementation("io.github.astrapi69:jobj-clone:$jobjCloneVersion")
-    implementation("io.github.astrapi69:randomizer:$randomizerCoreVersion")
-
+    testImplementation("io.github.astrapi69:jobj-clone:$jobjCloneVersion")
+    testImplementation("io.github.astrapi69:randomizer:$randomizerCoreVersion")
     testImplementation("io.github.astrapi69:test-object:$testObjectVersion")
     testImplementation("org.meanbean:meanbean:$meanbeanVersion")
     testImplementation("org.testng:testng:$testngVersion")

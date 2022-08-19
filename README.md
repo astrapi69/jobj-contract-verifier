@@ -31,13 +31,13 @@ your project `build.gradle` if you want to import the core functionality of jobj
 define version in file gradle.properties
 
 ```
-jobjContractVerifierVersion=3.5
+jobjContractVerifierVersion=4
 ```
 
 or in build.gradle ext area
 
 ```
-    jobjContractVerifierVersion = "3.5"
+    jobjContractVerifierVersion = "4"
 ```
 
 and than add the dependency to the dependencies area
@@ -58,7 +58,7 @@ Than you can add the dependency to your dependencies:
     <properties>
             ...
         <!-- JOBJ-CONTRACT-VERIFIER version -->
-        <jobj-contract-verifier.version>3.5</jobj-contract-verifier.version>
+        <jobj-contract-verifier.version>4</jobj-contract-verifier.version>
             ...
     </properties>
             ...
