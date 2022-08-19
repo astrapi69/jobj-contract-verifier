@@ -2,9 +2,9 @@
 
 <div style="text-align: center">
 
-[![Build Status](https://api.travis-ci.com/astrapi69/jobj-contract-verifier.svg?branch=develop)](https://travis-ci.com/github/astrapi69/jobj-contract-verifier) 
-[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-contract-verifier/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jobj-contract-verifier?branch=develop) 
-[![Open Issues](https://img.shields.io/github/issues/astrapi69/jobj-contract-verifier.svg?style=flat)](https://github.com/astrapi69/jobj-contract-verifier/issues) 
+[![Build Status](https://api.travis-ci.com/astrapi69/jobj-contract-verifier.svg?branch=develop)](https://travis-ci.com/github/astrapi69/jobj-contract-verifier)
+[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-contract-verifier/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jobj-contract-verifier?branch=develop)
+[![Open Issues](https://img.shields.io/github/issues/astrapi69/jobj-contract-verifier.svg?style=flat)](https://github.com/astrapi69/jobj-contract-verifier/issues)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-contract-verifier/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-contract-verifier)
 [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jobj-contract-verifier.svg)](http://www.javadoc.io/doc/de.alpharogroup/jobj-contract-verifier)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
@@ -55,24 +55,24 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 
 Than you can add the dependency to your dependencies:
 
-	<properties>
-			...
-		<!-- JOBJ-CONTRACT-VERIFIER version -->
-		<jobj-contract-verifier.version>3.5</jobj-contract-verifier.version>
-			...
-	</properties>
-			...
-		<dependencies>
-			...
-			<!-- JOBJ-CONTRACT-VERIFIER DEPENDENCY -->
-			<dependency>
-				<groupId>io.github.astrapi69</groupId>
-				<artifactId>jobj-contract-verifier</artifactId>
-				<version>${jobj-contract-verifier.version}</version>
-				<scope>test</scope>
-			</dependency>
-			...
-		</dependencies>
+    <properties>
+            ...
+        <!-- JOBJ-CONTRACT-VERIFIER version -->
+        <jobj-contract-verifier.version>3.5</jobj-contract-verifier.version>
+            ...
+    </properties>
+            ...
+        <dependencies>
+            ...
+            <!-- JOBJ-CONTRACT-VERIFIER DEPENDENCY -->
+            <dependency>
+                <groupId>io.github.astrapi69</groupId>
+                <artifactId>jobj-contract-verifier</artifactId>
+                <version>${jobj-contract-verifier.version}</version>
+                <scope>test</scope>
+            </dependency>
+            ...
+        </dependencies>
 
 # Donations
 
@@ -127,7 +127,7 @@ or over Monero(XMR) with:
 alt="Donation Monero Wallet" width="250"/>
 
 or over flattr:
-  
+
 <a href="http://flattr.com/thing/4067696/astrapi69jobj-contract-verifier-on-GitHub" target="_blank">
 <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" style="border: none" />
 </a>

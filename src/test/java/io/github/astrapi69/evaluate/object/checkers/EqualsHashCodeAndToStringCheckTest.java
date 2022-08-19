@@ -22,12 +22,8 @@ package io.github.astrapi69.evaluate.object.checkers;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.Optional;
 
-import io.github.astrapi69.random.number.RandomIntFactory;
-import io.github.astrapi69.random.object.RandomObjectFactory;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -38,7 +34,7 @@ import io.github.astrapi69.evaluate.object.api.ContractViolation;
 import io.github.astrapi69.evaluate.object.enums.EqualsContractViolation;
 import io.github.astrapi69.evaluate.object.enums.EqualsHashcodeContractViolation;
 import io.github.astrapi69.evaluate.object.enums.HashcodeContractViolation;
-import io.github.astrapi69.evaluate.object.enums.ToStringContractViolation;
+import io.github.astrapi69.random.number.RandomIntFactory;
 
 /**
  * The unit test class for the class {@link EqualsHashCodeAndToStringCheck}
@@ -56,7 +52,7 @@ public class EqualsHashCodeAndToStringCheckTest
 	 * {@inheritDoc}
 	 */
 	@BeforeMethod
-	protected void setUp() throws Exception
+	protected void setUp()
 	{
 	}
 
@@ -64,10 +60,10 @@ public class EqualsHashCodeAndToStringCheckTest
 	 * {@inheritDoc}
 	 */
 	@AfterMethod
-	protected void tearDown() throws Exception
+	protected void tearDown()
 	{
-		actual = null;
-		expected = null;
+		actual = Optional.empty();
+		expected = Optional.empty();
 	}
 
 
@@ -198,46 +194,6 @@ public class EqualsHashCodeAndToStringCheckTest
 		actual = EqualsHashCodeAndToStringCheck.equalsHashcodeAndToString(Integer.valueOf(0),
 			Integer.valueOf(1), Integer.valueOf(0), null);
 		expected = Optional.of(EqualsContractViolation.TRANSITIVITY);
-		assertEquals(expected, actual);
-	}
-
-	/**
-	 * Test method for {@link EqualsHashCodeAndToStringCheck#equalsHashcodeAndToString(Class)}.
-	 *
-	 * @throws IllegalAccessException
-	 *             if the caller does not have access to the property accessor method
-	 * @throws InstantiationException
-	 *             if a new instance of the bean's class cannot be instantiated
-	 * @throws InvocationTargetException
-	 *             if the property accessor method throws an exception
-	 * @throws NoSuchMethodException
-	 *             if an accessor method for this property cannot be found
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred
-	 * @throws ClassNotFoundException
-	 *             occurs if a given class cannot be located by the specified class loader
-	 * @throws NoSuchFieldException
-	 *             is thrown if no such field exists
-	 */
-	@Test(enabled = true)
-	public void testEqualsHashcodeAndToStringClass()
-		throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
-		InstantiationException, IOException, ClassNotFoundException, NoSuchFieldException
-	{
-		actual = EqualsHashCodeAndToStringCheck.equalsHashcodeAndToString(null);
-		expected = Optional.of(ToStringContractViolation.CLASS_NULL_ARGUMENT);
-		assertEquals(expected, actual);
-
-		actual = EqualsHashCodeAndToStringCheck.equalsHashcodeAndToString(Person.class);
-		expected = Optional.empty();
-		assertEquals(expected, actual);
-
-		actual = EqualsHashCodeAndToStringCheck.equalsHashcodeAndToString(Integer.class);
-		expected = Optional.empty();
-		assertEquals(expected, actual);
-
-		actual = EqualsHashCodeAndToStringCheck.equalsHashcodeAndToString(String.class);
-		expected = Optional.empty();
 		assertEquals(expected, actual);
 	}
 

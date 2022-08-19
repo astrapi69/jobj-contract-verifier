@@ -52,7 +52,7 @@ Version 3.3
 -------------
 
 ADDED:
- 
+
 - new build system gradle
 
 CHANGED:
@@ -89,7 +89,7 @@ Version 3.1
 -------------
 
 ADDED:
- 
+
 - new class ContractVerifier created that can verify a given class the contracts of the methods equals, hashcode and toString
 
 CHANGED:
@@ -101,12 +101,10 @@ Version 3
 -------------
 
 ADDED:
- 
+
 - this changelog file
 - created PULL_REQUEST_TEMPLATE.md file
 - created CODE_OF_CONDUCT.md file
 - created CONTRIBUTING.md file
 - provide package.html for the javadoc of packages
 - moved classes from obsolet jobject-evaluate project
-
-
