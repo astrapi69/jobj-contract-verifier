@@ -20,6 +20,10 @@
  */
 package io.github.astrapi69.evaluate.object;
 
+import io.github.astrapi69.random.number.RandomBooleanFactory;
+import io.github.astrapi69.random.number.RandomIntFactory;
+import io.github.astrapi69.random.object.RandomStringFactory;
+
 public class WeirdBadInconsistencyClass
 {
 	String name;
@@ -41,20 +45,20 @@ public class WeirdBadInconsistencyClass
 	@Override
 	public boolean equals(Object o)
 	{
-		boolean randomBoolean = EasyRandomExtensions.nextObject(boolean.class);
+		boolean randomBoolean = RandomBooleanFactory.randomBoolean();
 		return randomBoolean;
 	}
 
 	@Override
 	public int hashCode()
 	{
-		return EasyRandomExtensions.nextObject(Integer.class);
+		return RandomIntFactory.randomInt();
 	}
 
 	@Override
 	public String toString()
 	{
-		return EasyRandomExtensions.nextObject(String.class);
+		return RandomStringFactory.newRandomString();
 	}
 
 	public String getName()
