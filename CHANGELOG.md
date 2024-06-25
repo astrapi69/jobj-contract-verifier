@@ -18,6 +18,7 @@ CHANGED:
 - update of dependency randomizer to new version 10.2
 - update of test dependency test-object to new version 8.2
 - update of test dependency testng to new version 7.10.2
+- replaced obsolete dependency jobj-clone with the new dependency jobj-cloner in version 2.1
 
 Version 4
 -------------

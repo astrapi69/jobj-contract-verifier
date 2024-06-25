@@ -4,14 +4,14 @@ gradle-plugin-license-version = "0.16.1"
 gradle-plugin-spotless-version = "7.0.0.BETA1"
 gradle-plugin-version-catalog-update-version = "0.8.4"
 gradle-plugin-versions-version = "0.51.0"
-jobj-clone-version = "3.4"
+jobj-cloner-version = "2.1"
 meanbean-version = "2.0.3"
 randomizer-version = "10.2"
 test-object-version = "8.2"
 testng-version = "7.10.2"
 
 [libraries]
-jobj-clone = { module = "io.github.astrapi69:jobj-clone", version.ref = "jobj-clone-version" }
+jobj-cloner = { module = "io.github.astrapi69:jobj-cloner", version.ref = "jobj-cloner-version" }
 meanbean = { module = "org.meanbean:meanbean", version.ref = "meanbean-version" }
 randomizer = { module = "io.github.astrapi69:randomizer", version.ref = "randomizer-version" }
 test-object = { module = "io.github.astrapi69:test-object", version.ref = "test-object-version" }
