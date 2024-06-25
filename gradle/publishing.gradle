@@ -64,7 +64,9 @@ publishing {
             name = "github"
             def projectName = rootProject.name
             def username = "$projectHolderUsername"
-            def githubMavenRepositoryReleases = "https://raw.githubusercontent.com/" + username + "/" + projectName  + "/" + "main/releases"
+            def mainProviderUrl = "$projectScmProviderUrl"
+            def githubMavenRepositoryReleases = mainProviderUrl + username + "/" + projectName  + "/" + "raw/master/releases"
+            print(githubMavenRepositoryReleases)
             url = uri(githubMavenRepositoryReleases)
         }
     }

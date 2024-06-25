@@ -20,8 +20,14 @@
  */
 module jobj.contract.verifier
 {
+	requires java.logging;
+	requires jobj.reflect.main;
+	requires randomizer.main;
+	requires jobj.cloner.main;
+
 	exports io.github.astrapi69.evaluate.object.api;
 	exports io.github.astrapi69.evaluate.object.checker;
 	exports io.github.astrapi69.evaluate.object.enumeration;
 	exports io.github.astrapi69.evaluate.object.evaluator;
+	exports io.github.astrapi69.evaluate.object.verifier;
 }

@@ -1,6 +1,14 @@
 ## Change log
 ----------------------
 
+Version 5.1-SNAPSHOT
+-------------
+
+ADDED:
+
+- new ContractVerifier class 
+- new check methods in class EqualsHashCodeAndToStringCheck
+
 Version 5
 -------------
 
