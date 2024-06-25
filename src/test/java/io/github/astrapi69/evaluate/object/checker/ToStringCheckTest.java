@@ -28,7 +28,6 @@ import static org.testng.Assert.assertEquals;
 import java.io.Serializable;
 import java.util.Optional;
 
-import io.github.astrapi69.random.object.RandomStringFactory;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -37,6 +36,7 @@ import org.testng.annotations.Test;
 import io.github.astrapi69.evaluate.object.Person;
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
 import io.github.astrapi69.evaluate.object.enumtype.ToStringContractViolation;
+import io.github.astrapi69.random.object.RandomStringFactory;
 
 /**
  * The unit test class for the class {@link ToStringCheck}

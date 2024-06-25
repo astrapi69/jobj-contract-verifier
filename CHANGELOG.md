@@ -1,9 +1,17 @@
 ## Change log
 ----------------------
 
-Version 4.1-SNAPSHOT
+Version 5-SNAPSHOT
 -------------
 
+ADDED:
+
+- new libs.versions.toml file for new automatic catalog versions update
+
+CHANGED:
+
+- update of jdk to version 17
+- update of gradle to new version 8.8
 
 Version 4
 -------------

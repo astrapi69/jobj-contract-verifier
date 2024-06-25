@@ -27,8 +27,6 @@ import static org.testng.AssertJUnit.assertEquals;
 
 import java.util.Optional;
 
-import io.github.astrapi69.random.number.RandomBooleanFactory;
-import io.github.astrapi69.random.number.RandomIntFactory;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -38,6 +36,8 @@ import io.github.astrapi69.evaluate.object.Person;
 import io.github.astrapi69.evaluate.object.WeirdBadInconsistencyClass;
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
 import io.github.astrapi69.evaluate.object.enumtype.EqualsContractViolation;
+import io.github.astrapi69.random.number.RandomBooleanFactory;
+import io.github.astrapi69.random.number.RandomIntFactory;
 
 /**
  * The unit test class for the class {@link EqualsCheck}

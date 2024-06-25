@@ -27,11 +27,11 @@ import static org.testng.AssertJUnit.assertEquals;
 
 import java.io.Serializable;
 
-import io.github.astrapi69.random.object.RandomStringFactory;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
 import io.github.astrapi69.evaluate.object.Person;
+import io.github.astrapi69.random.object.RandomStringFactory;
 
 /**
  * The unit test class for the class {@link ToStringEvaluator}.
