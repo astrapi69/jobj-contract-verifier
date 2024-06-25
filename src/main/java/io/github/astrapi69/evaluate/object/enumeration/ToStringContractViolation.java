@@ -18,12 +18,25 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.evaluate.object.enumtype;
+package io.github.astrapi69.evaluate.object.enumeration;
+
+import io.github.astrapi69.evaluate.object.api.ContractViolation;
 
 /**
- * The class {@link VerificationType} holds the data how to verify of an object
+ * The enum {@link ToStringContractViolation} represents a contract violation as the name let
+ * presume
  */
-public enum VerificationType
+public enum ToStringContractViolation implements ContractViolation
 {
-	EQUALS_HASHCODE_AND_TO_STRING;
+	/** This value represents that the given class argument is null. */
+	CLASS_NULL_ARGUMENT,
+
+	/** This value represents the consistency contract violation. */
+	CONSISTENCY,
+
+	/** This value represents that the given argument is null for the consistency evaluation. */
+	CONSISTENCY_NULL_ARGUMENT,
+
+	/** This value represents that the method does not exists. */
+	NOT_EXISTENT
 }

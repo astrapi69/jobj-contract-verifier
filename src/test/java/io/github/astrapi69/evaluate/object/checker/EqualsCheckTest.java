@@ -35,7 +35,7 @@ import org.testng.annotations.Test;
 import io.github.astrapi69.evaluate.object.Person;
 import io.github.astrapi69.evaluate.object.WeirdBadInconsistencyClass;
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
-import io.github.astrapi69.evaluate.object.enumtype.EqualsContractViolation;
+import io.github.astrapi69.evaluate.object.enumeration.EqualsContractViolation;
 import io.github.astrapi69.random.number.RandomBooleanFactory;
 import io.github.astrapi69.random.number.RandomIntFactory;
 

@@ -6,9 +6,9 @@ gradle-plugin-version-catalog-update-version = "0.8.4"
 gradle-plugin-versions-version = "0.51.0"
 jobj-clone-version = "3.4"
 meanbean-version = "2.0.3"
-randomizer-version = "8.6"
-test-object-version = "7"
-testng-version = "7.6.1"
+randomizer-version = "10.2"
+test-object-version = "8.2"
+testng-version = "7.10.2"
 
 [libraries]
 jobj-clone = { module = "io.github.astrapi69:jobj-clone", version.ref = "jobj-clone-version" }

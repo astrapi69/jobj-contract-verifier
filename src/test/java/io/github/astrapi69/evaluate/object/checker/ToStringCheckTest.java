@@ -35,7 +35,7 @@ import org.testng.annotations.Test;
 
 import io.github.astrapi69.evaluate.object.Person;
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
-import io.github.astrapi69.evaluate.object.enumtype.ToStringContractViolation;
+import io.github.astrapi69.evaluate.object.enumeration.ToStringContractViolation;
 import io.github.astrapi69.random.object.RandomStringFactory;
 
 /**

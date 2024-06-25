@@ -12,6 +12,12 @@ CHANGED:
 
 - update of jdk to version 17
 - update of gradle to new version 8.8
+- update gradle-plugin dependency of com.github.ben-manes:gradle-versions-plugin to new version 0.51.0
+- update of gradle-plugin dependency 'com.diffplug.spotless:spotless-plugin-gradle' to new minor version 7.0.0.BETA1
+- update of gradle-plugin org.ajoberstar.grgit:grgit-gradle to new version 5.2.2
+- update of dependency randomizer to new version 10.2
+- update of test dependency test-object to new version 8.2
+- update of test dependency testng to new version 7.10.2
 
 Version 4
 -------------

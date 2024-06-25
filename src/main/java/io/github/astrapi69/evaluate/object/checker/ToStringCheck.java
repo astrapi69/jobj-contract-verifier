@@ -23,7 +23,7 @@ package io.github.astrapi69.evaluate.object.checker;
 import java.util.Optional;
 
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
-import io.github.astrapi69.evaluate.object.enumtype.ToStringContractViolation;
+import io.github.astrapi69.evaluate.object.enumeration.ToStringContractViolation;
 
 /**
  * The class {@link ToStringCheck} provides algorithms for evaluate the {@link Object#toString()}

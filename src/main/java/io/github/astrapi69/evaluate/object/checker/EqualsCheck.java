@@ -23,7 +23,7 @@ package io.github.astrapi69.evaluate.object.checker;
 import java.util.Optional;
 
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
-import io.github.astrapi69.evaluate.object.enumtype.EqualsContractViolation;
+import io.github.astrapi69.evaluate.object.enumeration.EqualsContractViolation;
 
 /**
  * The class {@link EqualsCheck} provides algorithms for check the <a href=
