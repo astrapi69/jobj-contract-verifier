@@ -25,5 +25,9 @@ package io.github.astrapi69.evaluate.object.enumeration;
  */
 public enum VerificationType
 {
+	/**
+	 * This value represents the verification type for {@link Object#equals(Object)},
+	 * {@link Object#hashCode()} and {@link Object#toString()}
+	 */
 	EQUALS_HASHCODE_AND_TO_STRING;
 }

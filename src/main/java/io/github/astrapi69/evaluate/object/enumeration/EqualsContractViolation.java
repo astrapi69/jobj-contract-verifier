@@ -33,10 +33,10 @@ public enum EqualsContractViolation implements ContractViolation
 	/** This value represents that the given argument is null for the consistency evaluation. */
 	CONSISTENCY_NULL_ARGUMENT,
 
-	/** This value represents the non null contract violation. */
+	/** This value represents the non-null contract violation. */
 	NON_NULL,
 
-	/** This value represents that the given argument is null for the non null evaluation. */
+	/** This value represents that the given argument is null for the non-null evaluation. */
 	NON_NULL_NULL_ARGUMENT,
 
 	/** This value represents the reflexivity contract violation. */
