@@ -18,10 +18,36 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-module jobj.contract.verifier
+package io.github.astrapi69.evaluate.object.enumeration;
+
+import io.github.astrapi69.evaluate.object.api.ContractViolation;
+import io.github.astrapi69.evaluate.object.checker.EqualsHashCodeAndToStringCheck;
+
+/**
+ * The enum {@link EqualsHashcodeContractViolation} represents a contract violation as the name let
+ * presume
+ */
+public enum EqualsHashcodeContractViolation implements ContractViolation
 {
-	exports io.github.astrapi69.evaluate.object.api;
-	exports io.github.astrapi69.evaluate.object.checker;
-	exports io.github.astrapi69.evaluate.object.enumeration;
-	exports io.github.astrapi69.evaluate.object.evaluator;
+
+	/**
+	 * This value represents the contract violation if the first and second argument in
+	 * {@link EqualsHashCodeAndToStringCheck#equalsAndHashcode(Object, Object, Object, Object)} are
+	 * equal.
+	 */
+	FIRST_AND_SECOND_EQUAL,
+
+	/**
+	 * This value represents the contract violation if the first and third argument in
+	 * {@link EqualsHashCodeAndToStringCheck#equalsAndHashcode(Object, Object, Object, Object)} are
+	 * unequal.
+	 */
+	FIRST_AND_THIRD_UNEQUAL,
+
+	/**
+	 * This value represents the contract violation if the first argument in
+	 * {@link EqualsHashCodeAndToStringCheck#equalsAndHashcode(Object, Object, Object, Object)} is
+	 * null.
+	 */
+	FIRST_ARG_NULL
 }

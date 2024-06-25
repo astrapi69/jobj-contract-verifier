@@ -24,7 +24,6 @@ import static org.testng.AssertJUnit.assertEquals;
 
 import java.util.Optional;
 
-import io.github.astrapi69.random.number.RandomIntFactory;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -32,7 +31,8 @@ import org.testng.annotations.Test;
 
 import io.github.astrapi69.evaluate.object.Person;
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
-import io.github.astrapi69.evaluate.object.enumtype.HashcodeContractViolation;
+import io.github.astrapi69.evaluate.object.enumeration.HashcodeContractViolation;
+import io.github.astrapi69.random.number.RandomIntFactory;
 
 /**
  * The unit test class for the class {@link HashcodeCheck}

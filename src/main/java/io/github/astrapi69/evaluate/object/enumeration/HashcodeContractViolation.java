@@ -18,36 +18,31 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.evaluate.object.enumtype;
+package io.github.astrapi69.evaluate.object.enumeration;
 
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
-import io.github.astrapi69.evaluate.object.checker.EqualsHashCodeAndToStringCheck;
 
 /**
- * The enum {@link EqualsHashcodeContractViolation} represents a contract violation as the name let
+ * The enum {@link HashcodeContractViolation} represents a contract violation as the name let
  * presume
  */
-public enum EqualsHashcodeContractViolation implements ContractViolation
+public enum HashcodeContractViolation implements ContractViolation
 {
+	/** This value represents the consistency contract violation. */
+	CONSISTENCY,
 
-	/**
-	 * This value represents the contract violation if the first and second argument in
-	 * {@link EqualsHashCodeAndToStringCheck#equalsAndHashcode(Object, Object, Object, Object)} are
-	 * equal.
-	 */
-	FIRST_AND_SECOND_EQUAL,
+	/** This value represents that the given argument is null for the consistency evaluation. */
+	CONSISTENCY_NULL_ARGUMENT,
 
-	/**
-	 * This value represents the contract violation if the first and third argument in
-	 * {@link EqualsHashCodeAndToStringCheck#equalsAndHashcode(Object, Object, Object, Object)} are
-	 * unequal.
-	 */
-	FIRST_AND_THIRD_UNEQUAL,
+	/** This value represents the eqauality contract violation. */
+	EQAUALITY,
 
-	/**
-	 * This value represents the contract violation if the first argument in
-	 * {@link EqualsHashCodeAndToStringCheck#equalsAndHashcode(Object, Object, Object, Object)} is
-	 * null.
-	 */
-	FIRST_ARG_NULL
+	/** This value represents that the given argument is null for the eqauality evaluation. */
+	EQAUALITY_NULL_ARGUMENT,
+
+	/** This value represents the uneqauality contract violation. */
+	UNEQAUALITY,
+
+	/** This value represents that the given argument is null for the uneqauality evaluation. */
+	UNEQAUALITY_NULL_ARGUMENT
 }

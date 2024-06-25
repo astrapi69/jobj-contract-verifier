@@ -25,19 +25,21 @@ Utility library for verify if java objects fulfill the contracts of equals, hash
 
 ## gradle dependency
 
+Replace the variable ${latestVersion} with the current latest version from the 'releases' directory.
+
 You can first define the version in the ext section and add than the following gradle dependency to
 your project `build.gradle` if you want to import the core functionality of jobj-contract-verifier:
 
 define version in file gradle.properties
 
 ```
-jobjContractVerifierVersion=4
+jobjContractVerifierVersion=${latestVersion}
 ```
 
 or in build.gradle ext area
 
 ```
-    jobjContractVerifierVersion = "4"
+    jobjContractVerifierVersion = "${latestVersion}"
 ```
 
 and than add the dependency to the dependencies area
@@ -58,7 +60,7 @@ Than you can add the dependency to your dependencies:
     <properties>
             ...
         <!-- JOBJ-CONTRACT-VERIFIER version -->
-        <jobj-contract-verifier.version>4</jobj-contract-verifier.version>
+        <jobj-contract-verifier.version>${latestVersion}</jobj-contract-verifier.version>
             ...
     </properties>
             ...

@@ -23,7 +23,7 @@ package io.github.astrapi69.evaluate.object.checker;
 import java.util.Optional;
 
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
-import io.github.astrapi69.evaluate.object.enumtype.HashcodeContractViolation;
+import io.github.astrapi69.evaluate.object.enumeration.HashcodeContractViolation;
 
 /**
  * The class {@link HashcodeCheck} provides algorithms for check the

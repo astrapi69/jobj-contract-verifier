@@ -18,31 +18,16 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.evaluate.object.enumtype;
-
-import io.github.astrapi69.evaluate.object.api.ContractViolation;
+package io.github.astrapi69.evaluate.object.enumeration;
 
 /**
- * The enum {@link HashcodeContractViolation} represents a contract violation as the name let
- * presume
+ * The class {@link VerificationType} holds the data how to verify of an object
  */
-public enum HashcodeContractViolation implements ContractViolation
+public enum VerificationType
 {
-	/** This value represents the consistency contract violation. */
-	CONSISTENCY,
-
-	/** This value represents that the given argument is null for the consistency evaluation. */
-	CONSISTENCY_NULL_ARGUMENT,
-
-	/** This value represents the eqauality contract violation. */
-	EQAUALITY,
-
-	/** This value represents that the given argument is null for the eqauality evaluation. */
-	EQAUALITY_NULL_ARGUMENT,
-
-	/** This value represents the uneqauality contract violation. */
-	UNEQAUALITY,
-
-	/** This value represents that the given argument is null for the uneqauality evaluation. */
-	UNEQAUALITY_NULL_ARGUMENT
+	/**
+	 * This value represents the verification type for {@link Object#equals(Object)},
+	 * {@link Object#hashCode()} and {@link Object#toString()}
+	 */
+	EQUALS_HASHCODE_AND_TO_STRING;
 }

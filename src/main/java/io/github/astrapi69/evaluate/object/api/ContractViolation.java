@@ -21,9 +21,14 @@
 package io.github.astrapi69.evaluate.object.api;
 
 /**
- * The interface {@link ContractViolation} is a marker interface
+ * The interface {@link ContractViolation} is the main interface for contract violations
  */
 public interface ContractViolation
 {
+	/**
+	 * Gets the name of the contract violations
+	 *
+	 * @return the name of the contract violations
+	 */
 	String name();
 }
