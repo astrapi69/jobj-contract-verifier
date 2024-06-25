@@ -1,0 +1,60 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.astrapi69",
+    "module": "jobj-contract-verifier",
+    "version": "5",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.8"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "jobj-contract-verifier-5.jar",
+          "url": "jobj-contract-verifier-5.jar",
+          "size": 18675,
+          "sha512": "75df010814467811fd08135b74fb729d34410f0fa2907ea142da42e4085b99c6e3e0c32405102709780361083beae8bd39a98534bcf148a9c0a3fe919890aef2",
+          "sha256": "3787954e4f72f2cb1f14479532ed1d6a4622021975456b90633284221c811eac",
+          "sha1": "dcffb5243edd516f7e5284a7ed91fdbbf14cd58c",
+          "md5": "73288ba308b286b2c920a87bbc412e8b"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "jobj-contract-verifier-5.jar",
+          "url": "jobj-contract-verifier-5.jar",
+          "size": 18675,
+          "sha512": "75df010814467811fd08135b74fb729d34410f0fa2907ea142da42e4085b99c6e3e0c32405102709780361083beae8bd39a98534bcf148a9c0a3fe919890aef2",
+          "sha256": "3787954e4f72f2cb1f14479532ed1d6a4622021975456b90633284221c811eac",
+          "sha1": "dcffb5243edd516f7e5284a7ed91fdbbf14cd58c",
+          "md5": "73288ba308b286b2c920a87bbc412e8b"
+        }
+      ]
+    }
+  ]
+}

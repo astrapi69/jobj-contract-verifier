@@ -60,23 +60,13 @@ publishing {
         }
     }
     repositories {
-//        maven {
-//            name = "github"
-//            def githubMavenRepositoryReleases = "https://raw.githubusercontent.com/" + project.property("$projectHolderUsername" + "/" + rootProject.name  + "/" + "main/releases")
-//            url = uri(githubMavenRepositoryReleases)
-//        }
-
         maven {
-            name = "sonatype"
-            credentials {
-                username System.getenv("$projectRepositoriesUserNameKey") ?: project.property("$projectRepositoriesUserNameKey")
-                password System.getenv("$projectRepositoriesPasswordKey") ?: project.property("$projectRepositoriesPasswordKey")
-            }
-            def releasesRepoUrl = "$projectRepositoriesReleasesRepoUrl" as Object
-            def snapshotsRepoUrl = "$projectRepositoriesSnapshotsRepoUrl" as Object
-            url = releaseVersion ? releasesRepoUrl : snapshotsRepoUrl
+            name = "github"
+            def projectName = rootProject.name
+            def username = "$projectHolderUsername"
+            def githubMavenRepositoryReleases = "https://raw.githubusercontent.com/" + username + "/" + projectName  + "/" + "main/releases"
+            url = uri(githubMavenRepositoryReleases)
         }
-
     }
 }
 
