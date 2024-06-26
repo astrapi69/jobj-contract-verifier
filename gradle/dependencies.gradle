@@ -1,6 +1,8 @@
 dependencies {
-    testImplementation libs.jobj.cloner
-    testImplementation libs.randomizer
+    implementation libs.easy.random
+    implementation libs.jobj.cloner
+    implementation libs.jobj.reflect
+    implementation libs.randomizer
     // Note: use of bundles...
     testImplementation libs.bundles.unit.testing
 }

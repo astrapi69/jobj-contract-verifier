@@ -1,6 +1,15 @@
 ## Change log
 ----------------------
 
+Version 5.1
+-------------
+
+ADDED:
+
+- new class ContractVerifier created
+- new annotation class Experimental created
+- new check methods in class EqualsHashCodeAndToStringCheck created
+
 Version 5
 -------------
 

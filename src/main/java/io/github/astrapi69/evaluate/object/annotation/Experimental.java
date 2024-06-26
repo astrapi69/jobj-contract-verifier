@@ -18,16 +18,31 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-module jobj.contract.verifier
-{
-	requires java.logging;
-	requires jobj.reflect.main;
-	requires randomizer.main;
-	requires jobj.cloner.main;
+package io.github.astrapi69.evaluate.object.annotation;
 
-	exports io.github.astrapi69.evaluate.object.api;
-	exports io.github.astrapi69.evaluate.object.checker;
-	exports io.github.astrapi69.evaluate.object.enumeration;
-	exports io.github.astrapi69.evaluate.object.evaluator;
-	exports io.github.astrapi69.evaluate.object.verifier;
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+/**
+ * The annotation {@link Experimental} has an experimental maturity. <br/>
+ * <br/>
+ * Note: The @Experimental annotation indicates that a class or method is still in the experimental
+ * phase. Avoid using elements marked with this annotation in a production environment, as they may
+ * be unstable or subject to change.
+ */
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ ElementType.TYPE, ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER,
+		ElementType.CONSTRUCTOR, ElementType.LOCAL_VARIABLE, ElementType.PACKAGE,
+		ElementType.ANNOTATION_TYPE, ElementType.TYPE_USE, ElementType.TYPE_PARAMETER })
+public @interface Experimental {
+	/**
+	 * The optional description why the class is tagged as experimental
+	 *
+	 * @return the description
+	 */
+	String description() default "";
 }
