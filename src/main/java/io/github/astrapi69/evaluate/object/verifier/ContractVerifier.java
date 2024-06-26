@@ -83,6 +83,11 @@ public final class ContractVerifier<T>
 		this.ignoreFieldNames = ignoreFieldNames;
 	}
 
+	/**
+	 * Gets the verification type
+	 *
+	 * @return the {@link VerificationType} object
+	 */
 	public VerificationType getVerificationType()
 	{
 		return verificationType;

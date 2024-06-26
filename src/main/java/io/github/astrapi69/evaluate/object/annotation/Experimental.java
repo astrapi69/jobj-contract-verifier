@@ -39,5 +39,10 @@ import java.lang.annotation.Target;
 		ElementType.CONSTRUCTOR, ElementType.LOCAL_VARIABLE, ElementType.PACKAGE,
 		ElementType.ANNOTATION_TYPE, ElementType.TYPE_USE, ElementType.TYPE_PARAMETER })
 public @interface Experimental {
+	/**
+	 * The optional description why the class is tagged as experimental
+	 *
+	 * @return the description
+	 */
 	String description() default "";
 }
