@@ -62,8 +62,10 @@ public class ContractVerifierTest
 		ContractVerifier.of(ClassExtendsAnnotatedInterface.class).verify();
 		ContractVerifier.of(SubAnnotatedClass.class).verify();
 		ContractVerifier.of(AccessRight.class).verify();
-		ContractVerifier.of(Roles.class, "roles").verify();
-		ContractVerifier.of(Role.class, "rights").verify();
+		ContractVerifier.of(Roles.class, "roles")
+			.withFactoryFunction(clzz -> Roles.builder().build()).verify();
+		ContractVerifier.of(Role.class, "rights")
+			.withFactoryFunction(clzz -> Role.builder().build()).verify();
 		// ContractVerifier.of(ExceptionEvent.class, "value").verify();
 		ContractVerifier.of(AlgorithmModel.class).verify();
 		ContractVerifier.of(A.class).verify();

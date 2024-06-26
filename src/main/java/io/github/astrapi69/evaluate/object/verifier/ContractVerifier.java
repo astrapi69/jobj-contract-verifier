@@ -26,6 +26,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 
+import io.github.astrapi69.evaluate.object.annotation.Experimental;
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
 import io.github.astrapi69.evaluate.object.checker.EqualsHashCodeAndToStringCheck;
 import io.github.astrapi69.evaluate.object.enumeration.VerificationType;
@@ -34,8 +35,9 @@ import io.github.astrapi69.evaluate.object.enumeration.VerificationType;
  * The class {@link ContractVerifier} can verify if the fulfillment of contracts from a given object
  * is given. This is useful in unit tests for verifying the contracts for the methods
  * {@code equals}, {@code hashCode} and optionally {@code toString}. This can also improve the code
- * coverage of an project because the most methods of beans are tested.
+ * coverage of a project because the most methods of beans are tested.
  */
+@Experimental
 public final class ContractVerifier<T>
 {
 
