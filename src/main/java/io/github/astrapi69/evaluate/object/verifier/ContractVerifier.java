@@ -58,7 +58,7 @@ public final class ContractVerifier<T>
 
 	/** The cls. */
 	private final Class<T> cls;
-	String[] ignoreFieldNames;
+	private final String[] ignoreFieldNames;
 
 	/** The factory function. */
 	private Function<Class<T>, T> factoryFunction;
