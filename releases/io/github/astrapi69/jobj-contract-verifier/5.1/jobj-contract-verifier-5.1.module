@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.astrapi69",
+    "module": "jobj-contract-verifier",
+    "version": "5.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.8"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "jobj-contract-verifier-5.1.jar",
+          "url": "jobj-contract-verifier-5.1.jar",
+          "size": 23070,
+          "sha512": "cbe9fb47869e97c92465c790a4f8c240af487c74a7f253882ba00c34fd7c8bca9ab4298028a6b4c2a3671cb715fa0f7dde7efff7ff21ad9f039d99cea3923972",
+          "sha256": "8ca21565488f15bfadbf805e328954eef3681647d9fd981ebf98e652ca756416",
+          "sha1": "3fa045a73439aa1d06fbb8dd014101ee8b5bb004",
+          "md5": "fa2b4fa49bd7b41a9eba1d0de01b9239"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jeasy",
+          "module": "easy-random",
+          "version": {
+            "requires": "5.0.0"
+          }
+        },
+        {
+          "group": "io.github.astrapi69",
+          "module": "jobj-cloner",
+          "version": {
+            "requires": "2.1"
+          }
+        },
+        {
+          "group": "io.github.astrapi69",
+          "module": "jobj-reflect",
+          "version": {
+            "requires": "2.4"
+          }
+        },
+        {
+          "group": "io.github.astrapi69",
+          "module": "randomizer",
+          "version": {
+            "requires": "10.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "jobj-contract-verifier-5.1.jar",
+          "url": "jobj-contract-verifier-5.1.jar",
+          "size": 23070,
+          "sha512": "cbe9fb47869e97c92465c790a4f8c240af487c74a7f253882ba00c34fd7c8bca9ab4298028a6b4c2a3671cb715fa0f7dde7efff7ff21ad9f039d99cea3923972",
+          "sha256": "8ca21565488f15bfadbf805e328954eef3681647d9fd981ebf98e652ca756416",
+          "sha1": "3fa045a73439aa1d06fbb8dd014101ee8b5bb004",
+          "md5": "fa2b4fa49bd7b41a9eba1d0de01b9239"
+        }
+      ]
+    }
+  ]
+}
