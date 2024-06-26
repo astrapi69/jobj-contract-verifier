@@ -5,7 +5,6 @@
 [![Build Status](https://api.travis-ci.com/astrapi69/jobj-contract-verifier.svg?branch=develop)](https://travis-ci.com/github/astrapi69/jobj-contract-verifier)
 [![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-contract-verifier/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jobj-contract-verifier?branch=develop)
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/jobj-contract-verifier.svg?style=flat)](https://github.com/astrapi69/jobj-contract-verifier/issues)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-contract-verifier/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-contract-verifier)
 [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jobj-contract-verifier.svg)](http://www.javadoc.io/doc/de.alpharogroup/jobj-contract-verifier)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Hits Of Code](https://hitsofcode.com/github/astrapi69/jobj-contract-verifier)](https://hitsofcode.com/github/astrapi69/jobj-contract-verifier/view)
@@ -22,10 +21,24 @@ Utility library for verify if java objects fulfill the contracts of equals, hash
 >
 > If you love this project [![donation](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
 
-
 ## gradle dependency
 
 Replace the variable ${latestVersion} with the current latest version from the 'releases' directory.
+
+add the new maven block of this repository to the repositories section from your build.gradle
+```groovy
+repositories {
+    // other maven blocks
+    // maven block for this repository
+    maven {
+        name = "github jobj-contract-verifier releases"
+        url "https://github.com/astrapi69/jobj-contract-verifier/raw/master/releases"
+        mavenContent {
+            releasesOnly()
+        }
+    }
+}
+```
 
 You can first define the version in the ext section and add than the following gradle dependency to
 your project `build.gradle` if you want to import the core functionality of jobj-contract-verifier:
@@ -42,10 +55,27 @@ or in build.gradle ext area
     jobjContractVerifierVersion = "${latestVersion}"
 ```
 
-and than add the dependency to the dependencies area
+then add the test dependency to the dependencies area
 
 ```
     testImplementation("io.github.astrapi69:jobj-contract-verifier:$jobjContractVerifierVersion")
+```
+
+# with new libs.versions.toml file
+
+If you use the new libs.versions.toml file for new automatic catalog versions update
+
+```
+[versions]
+jobj-contract-verifier-version=${latestVersion}
+
+[libraries]
+jobj-contract-verifier = { module = "io.github.astrapi69:jobj-contract-verifier", version.ref = "jobj-contract-verifier-version" }
+```
+then add the test dependency to the dependencies area
+
+```
+    testImplementation libs.jobj.contract.verifier
 ```
 
 ## Maven dependency
@@ -172,24 +202,6 @@ Do not hesitate to contact the jobj-contract-verifier developers with your quest
 - [equalsverifier](https://github.com/jqno/equalsverifier) EqualsVerifier can be used in Java unit tests to verify whether the contract for the equals and hashCode methods is met.
 
 ## Credits
-
-|**Travis CI**|
-|     :---:      |
-|[![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)](https://travis-ci.com/github)|
-|Special thanks to [Travis CI](https://travis-ci.com/github) for providing a free continuous integration service for open source projects|
-|     <img width=1000/>     |
-
-|**Nexus Sonatype repositories**|
-|     :---:      |
-|[![sonatype repository](https://img.shields.io/nexus/r/https/oss.sonatype.org/de.alpharogroup/jobj-contract-verifier.svg?style=for-the-badge)](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~jobj-contract-verifier~~~)|
-|Special thanks to [sonatype repository](https://www.sonatype.com) for providing a free maven repository service for open source projects|
-|     <img width=1000/>     |
-
-|**coveralls.io**|
-|     :---:      |
-|[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-contract-verifier/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jobj-contract-verifier?branch=develop)|
-|Special thanks to [coveralls.io](https://coveralls.io) for providing a free code coverage for open source projects|
-|     <img width=1000/>     |
 
 |**javadoc.io**|
 |     :---:      |
