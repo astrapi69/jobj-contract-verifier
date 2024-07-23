@@ -18,7 +18,7 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-module jobj.contract.verifier
+module io.github.astrapisixtynine.jobj.contract.verifier
 {
 	requires java.logging;
 	requires jobj.reflect.main;
