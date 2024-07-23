@@ -20,10 +20,10 @@
  */
 package io.github.astrapi69.evaluate.object.evaluator;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
-import org.testng.annotations.Test;
 
 /**
  * The unit test class for the class {@link ComparableEvaluator}
@@ -34,7 +34,7 @@ public class ComparableEvaluatorTest
 	/**
 	 * Test method for {@link ComparableEvaluator#evaluateConsistency(Comparable, Comparable)}.
 	 */
-	@Test(enabled = true)
+	@Test
 	public void testEvaluateConsistency()
 	{
 		boolean expected;
@@ -57,7 +57,7 @@ public class ComparableEvaluatorTest
 	 * Test method for
 	 * {@link ComparableEvaluator#evaluateReversalComparison(Comparable, Comparable)}.
 	 */
-	@Test(enabled = true)
+	@Test
 	public void testEvaluateReversalComparison()
 	{
 		boolean expected;
@@ -82,7 +82,7 @@ public class ComparableEvaluatorTest
 	 * Test method for
 	 * {@link ComparableEvaluator#evaluateTransitivity(Comparable, Comparable, Comparable)}.
 	 */
-	@Test(enabled = true)
+	@Test
 	public void testEvaluateTransitivity()
 	{
 		boolean expected;

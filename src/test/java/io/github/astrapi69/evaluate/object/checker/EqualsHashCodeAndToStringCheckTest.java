@@ -20,14 +20,14 @@
  */
 package io.github.astrapi69.evaluate.object.checker;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Optional;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 import io.github.astrapi69.evaluate.object.Person;
 import io.github.astrapi69.evaluate.object.api.ContractViolation;
@@ -51,7 +51,7 @@ public class EqualsHashCodeAndToStringCheckTest
 	/**
 	 * {@inheritDoc}
 	 */
-	@BeforeMethod
+	@BeforeEach
 	protected void setUp()
 	{
 	}
@@ -59,7 +59,7 @@ public class EqualsHashCodeAndToStringCheckTest
 	/**
 	 * {@inheritDoc}
 	 */
-	@AfterMethod
+	@AfterEach
 	protected void tearDown()
 	{
 		actual = Optional.empty();
@@ -71,7 +71,7 @@ public class EqualsHashCodeAndToStringCheckTest
 	 * Test method for
 	 * {@link EqualsHashCodeAndToStringCheck#equalsAndHashcode(Object, Object, Object, Object)}.
 	 */
-	@Test(enabled = true)
+	@Test
 	public void testEqualsAndHashcode()
 	{
 		actual = EqualsHashCodeAndToStringCheck.equalsAndHashcode(Integer.valueOf(0),
@@ -109,7 +109,7 @@ public class EqualsHashCodeAndToStringCheckTest
 	 * Test method for
 	 * {@link EqualsHashCodeAndToStringCheck#equalsAndHashcodeEquality(Object, Object)}.
 	 */
-	@Test(enabled = true)
+	@Test
 	public void testEqualsAndHashcodeEquality()
 	{
 		actual = EqualsHashCodeAndToStringCheck.equalsAndHashcodeEquality(Integer.valueOf(0),
@@ -135,7 +135,7 @@ public class EqualsHashCodeAndToStringCheckTest
 	 * Test method for
 	 * {@link EqualsHashCodeAndToStringCheck#equalsAndHashcodeUnequality(Object, Object)}.
 	 */
-	@Test(enabled = true)
+	@Test
 	public void testEqualsAndHashcodeUnequality()
 	{
 		actual = EqualsHashCodeAndToStringCheck.equalsAndHashcodeUnequality(Integer.valueOf(0),
@@ -163,7 +163,7 @@ public class EqualsHashCodeAndToStringCheckTest
 	 * Test method for
 	 * {@link EqualsHashCodeAndToStringCheck#equalsHashcodeAndToString(Object, Object, Object, Object)}.
 	 */
-	@Test(enabled = true)
+	@Test
 	public void testEqualsHashcodeAndToString()
 	{
 		actual = EqualsHashCodeAndToStringCheck.equalsHashcodeAndToString(Integer.valueOf(0),
@@ -200,7 +200,7 @@ public class EqualsHashCodeAndToStringCheckTest
 	/**
 	 * Test method for {@link EqualsHashCodeAndToStringCheck#equalsHashcodeAndToString(Object)}
 	 */
-	@Test(enabled = true)
+	@Test
 	public void testEqualsHashcodeAndToStringObject()
 	{
 		actual = EqualsHashCodeAndToStringCheck.equalsHashcodeAndToString(Integer.valueOf(0));
@@ -230,7 +230,7 @@ public class EqualsHashCodeAndToStringCheckTest
 	/**
 	 * Test method for {@link EqualsHashCodeAndToStringCheck#hashcodeCheck(Object, Object, Object)}
 	 */
-	@Test(enabled = true)
+	@Test
 	public void testHashcodeCheck()
 	{
 		actual = EqualsHashCodeAndToStringCheck.hashcodeCheck(Integer.valueOf(0),

@@ -1,0 +1,83 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.astrapi69",
+    "module": "jobj-contract-verifier",
+    "version": "5.2",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.9"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "jobj-contract-verifier-5.2.jar",
+          "url": "jobj-contract-verifier-5.2.jar",
+          "size": 23084,
+          "sha512": "bd199c6b02ffe038871d464173580284bed4396dcfef857cbe57a3c74f24e657cd309554a8a06348b4a13ac426105a6ad38ec1a307e1bf571411be14c9396ca6",
+          "sha256": "f656876dfcd775b812cf3f4a0c9b6321bdcb5b320e1d8321018ebfea0e1f8a45",
+          "sha1": "82ed401a54bec72d4a4ec136f5d3da1e4dae9f08",
+          "md5": "94bcd3d96123d21a72ffe25572a0fba8"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.astrapi69",
+          "module": "jobj-cloner",
+          "version": {
+            "requires": "2.1"
+          }
+        },
+        {
+          "group": "io.github.astrapi69",
+          "module": "jobj-reflect",
+          "version": {
+            "requires": "2.4"
+          }
+        },
+        {
+          "group": "io.github.astrapi69",
+          "module": "randomizer",
+          "version": {
+            "requires": "10.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "jobj-contract-verifier-5.2.jar",
+          "url": "jobj-contract-verifier-5.2.jar",
+          "size": 23084,
+          "sha512": "bd199c6b02ffe038871d464173580284bed4396dcfef857cbe57a3c74f24e657cd309554a8a06348b4a13ac426105a6ad38ec1a307e1bf571411be14c9396ca6",
+          "sha256": "f656876dfcd775b812cf3f4a0c9b6321bdcb5b320e1d8321018ebfea0e1f8a45",
+          "sha1": "82ed401a54bec72d4a4ec136f5d3da1e4dae9f08",
+          "md5": "94bcd3d96123d21a72ffe25572a0fba8"
+        }
+      ]
+    }
+  ]
+}

@@ -20,10 +20,10 @@
  */
 package io.github.astrapi69.evaluate.object.evaluator;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
-import org.testng.annotations.Test;
 
 import io.github.astrapi69.evaluate.object.Person;
 import io.github.astrapi69.random.number.RandomIntFactory;

@@ -20,10 +20,10 @@
  */
 package io.github.astrapi69.evaluate.object.evaluator;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
-import org.testng.annotations.Test;
 
 /**
  * The unit test class for the class {@link EqualsHashCodeAndToStringEvaluator}.
@@ -89,7 +89,7 @@ public class EqualsHashCodeAndToStringEvaluatorTest
 	 * Test method for
 	 * {@link EqualsHashCodeAndToStringEvaluator#evaluateEqualsAndHashcodeUnequality(Object, Object)}.
 	 */
-	@Test(enabled = true)
+	@Test
 	public void testEvaluateEqualsAndHashcodeUnequality()
 	{
 		boolean expected;
@@ -113,7 +113,7 @@ public class EqualsHashCodeAndToStringEvaluatorTest
 	 * Test method for
 	 * {@link EqualsHashCodeAndToStringEvaluator#evaluateEqualsHashcodeAndToString(Object, Object, Object, Object)}.
 	 */
-	@Test(enabled = true)
+	@Test
 	public void testEvaluateEqualsHashcodeAndToString()
 	{
 		boolean expected;
@@ -147,7 +147,7 @@ public class EqualsHashCodeAndToStringEvaluatorTest
 	 * Test method for
 	 * {@link EqualsHashCodeAndToStringEvaluator#evaluateEqualsHashcodeAndToString(Object)}
 	 */
-	@Test(enabled = true)
+	@Test
 	public void testEvaluateEqualsHashcodeAndToStringSingleObject()
 	{
 		boolean expected;

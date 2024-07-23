@@ -1,6 +1,16 @@
 ## Change log
 ----------------------
 
+Version 5.2
+-------------
+
+CHANGED:
+
+- update of gradle to new version 8.9
+- replaced test dependency testng with junit-jupiter
+- removed unused dependency easy-random
+- rename of module to io.github.astrapisixtynine.jobj.contract.verifier
+
 Version 5.1
 -------------
 

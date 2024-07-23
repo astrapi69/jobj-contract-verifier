@@ -1,7 +1,7 @@
 
 test {
     jvmArgs '--add-opens', 'java.base/java.lang=ALL-UNNAMED'
-    useTestNG()
+    useJUnitPlatform()
 }
 
 jacocoTestReport {
