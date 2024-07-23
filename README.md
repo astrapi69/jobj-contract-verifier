@@ -25,21 +25,6 @@ Utility library for verify if java objects fulfill the contracts of equals, hash
 
 Replace the variable ${latestVersion} with the current latest version from the 'releases' directory.
 
-add the new maven block of this repository to the repositories section from your build.gradle
-```groovy
-repositories {
-    // other maven blocks
-    // maven block for this repository
-    maven {
-        name = "github jobj-contract-verifier releases"
-        url "https://github.com/astrapi69/jobj-contract-verifier/raw/master/releases"
-        mavenContent {
-            releasesOnly()
-        }
-    }
-}
-```
-
 You can first define the version in the ext section and add than the following gradle dependency to
 your project `build.gradle` if you want to import the core functionality of jobj-contract-verifier:
 
