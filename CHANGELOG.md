@@ -4,7 +4,11 @@
 Version 5.2-SNAPSHOT
 -------------
 
+CHANGED:
 
+- update of gradle to new version 8.9
+- replaced test dependency testng with junit-jupiter
+- removed unused dependency easy-random
 
 Version 5.1
 -------------

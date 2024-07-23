@@ -1,8 +1,9 @@
 dependencies {
-    implementation libs.easy.random
     implementation libs.jobj.cloner
     implementation libs.jobj.reflect
     implementation libs.randomizer
+    implementation libs.meanbean
     // Note: use of bundles...
     testImplementation libs.bundles.unit.testing
+    testRuntimeOnly libs.junit.platform.launcher
 }
