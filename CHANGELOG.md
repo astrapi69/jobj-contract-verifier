@@ -4,7 +4,13 @@
 Version 5.3-SNAPSHOT
 -------------
 
+CHANGED:
 
+- update of gradle to new version 8.10.2
+- update of gradle-plugin dependency 'com.diffplug.spotless:spotless-plugin-gradle' to new minor version 7.0.0.BETA2
+- update of test dependency test-object to new version 9
+- update of test dependency junit-jupiter to new version 5.11.1
+- update of test dependency junit-platform-launcher to new version 1.11.1
 
 Version 5.2
 -------------

@@ -1,17 +1,17 @@
 [versions]
 gradle-plugin-grgit-version = "5.2.2"
 gradle-plugin-license-version = "0.16.1"
-gradle-plugin-spotless-version = "7.0.0.BETA1"
+gradle-plugin-spotless-version = "7.0.0.BETA2"
 gradle-plugin-version-catalog-update-version = "0.8.4"
 gradle-plugin-versions-version = "0.51.0"
 jobj-cloner-version = "2.1"
 jobj-reflect-version = "2.4"
-junit-jupiter-params-version = "5.11.0-M2"
-junit-jupiter-version = "5.11.0-M2"
-junit-platform-launcher-version = "1.11.0-M2"
+junit-jupiter-params-version = "5.11.1"
+junit-jupiter-version = "5.11.1"
+junit-platform-launcher-version = "1.11.1"
 meanbean-version = "3.0.0-M9"
 randomizer-version = "10.2"
-test-object-version = "8.2"
+test-object-version = "9"
 
 [libraries]
 jobj-cloner = { module = "io.github.astrapi69:jobj-cloner", version.ref = "jobj-cloner-version" }
