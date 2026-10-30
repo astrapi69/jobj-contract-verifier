@@ -6,6 +6,12 @@ Version 5.3-SNAPSHOT
 
 CHANGED:
 
+- releases go to Maven Central through the Central Portal, as in the rest of the family: the
+  `com.gradleup.nmcp` plugin uploads, the maintainer releases each deployment in the Portal, and a
+  `RELEASE-*` tag runs the new `publish.yml`, which signs with the signing subkey that the secret
+  `GPG_KEY_ID` names. The OSSRH staging endpoint this project published to is shut down; its
+  settings are gone, among them the switch that held the checksums to md5 and sha1, and snapshots
+  resolve from the Central Portal's snapshot repository (#3)
 - update of gradle to new version 8.10.2
 - update of gradle-plugin dependency 'com.diffplug.spotless:spotless-plugin-gradle' to new minor version 7.0.0.BETA2
 - update of test dependency test-object to new version 9
